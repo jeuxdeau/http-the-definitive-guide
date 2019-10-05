@@ -181,7 +181,8 @@
   * 원격 터미널 세션을 위해 흔히 사용됨.
   * HTTP 서버를 포함한 일반적인 TCP 서버에 연결하기 위해 사용될 수도 있음.
 * `telnet [www.joes.hardware.com](http://www.joes.hardware.com) 80` 으로 통신 가능.
-* nc\(netcat\)
+* `nc(netcat)` - HTTP를 포함한 UDP 혹은 TCP 기반의 트래픽 조작 가능.
+    * [http://netcat.sourceforge.net/](http://netcat.sourceforge.net/)
 
 ### 1.7 프로토콜 버전
 
