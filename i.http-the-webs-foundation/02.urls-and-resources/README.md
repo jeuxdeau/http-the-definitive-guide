@@ -138,7 +138,7 @@ URL이 너무 길죠. 편하게(짧게) 써 봅시다.
 
 ##### 상대 참조 해석
 
-[](https://www.notion.so/80c61d24e9f7414a8b480a23bcd965b4#d9b683ef8f354db2a1b986cfb409d5cd)
+![](../../.gitbook/assets/url-and-resources-relative-to-absolute-url.png)
 
 #### 2.3.2 URL 확장
 
