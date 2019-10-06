@@ -6,13 +6,13 @@
 #### Q. 프래그먼트 예시
 > github 의 linux 프로젝트 main.c 의 111 번째 프래그먼트를 요청해보았다 (https://github.com/torvalds/linux/blob/43b815c6a8e7dbccb5b8bd9c4b099c24bc22d135/init/main.c#L111)
 
-![fragment_example2.png](../.gitbook/assets/frament_example2.png)
+![fragment_example2.png](../../.gitbook/assets/frament_example2.png)
 > 실제로 request url 에는 fragment(\#) 이 포함되어 있지 않지만 browser 에서는 111번째 라인부터 표시해준다
 
 #### Q. 상대 URL 예시
 > https://github.com/jeuxdeau/http-the-definitive-guide/blob/master/i.http-the-webs-foundation/01.overview-of-http/01.overview-of-http-answers.md
 
-![relative_url.png](../.gitbook/assets/relative_url_example.png)
+![relative_url.png](../../.gitbook/assets/relative_url_example.png)
 
 ```html
 <p><strong>(2) 헤더</strong></p>
@@ -34,6 +34,6 @@
 
 > 모든 컴포넌트가 비어 있다가 오른쪽 방향 아닌가?
 
-![url_parsing.png](../.gitbook/assets/url_parsing.png)
+![url_parsing.png](../../.gitbook/assets/url_parsing.png)
 
 5. 이미지의 source 는 https://github.com/jeuxdeau/http-the-definitive-guide/blob/master/.gitbook/assets/http_request_headers2.png 가 된다
