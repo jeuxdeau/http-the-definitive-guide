@@ -14,4 +14,5 @@
 * [03. HTTP 메시지](i.http-the-webs-foundation/03.http-messages/README.md)
   * [Questions](i.http-the-webs-foundation/03.http-messages/03.http-messages-questions.md)
   * [Answers](i.http-the-webs-foundation/03.http-messages/03.http-messages-answers.md)
+* [교재 정오표](i.http-the-webs-foundation/undefined.md)
 

@@ -15,7 +15,7 @@ http://www.joes-hardware.com/seasonal/index-fall.html
 
 * 웹 클라이언트가 어떤 프로토콜로 접근해야 하는지의 명세
 
-### `http://www.joes-hardware.com` : 호스트 \(서버 위치\)
+### `www.joes-hardware.com` : 호스트 \(서버 위치\)
 
 * 서버의 위치
 * 웹 클라이언트가 요청하는 리소스가 어디에 호스팅 되어있는지 \(어느 서버에 위치해 있는지\) 식별
