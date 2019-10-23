@@ -28,27 +28,26 @@
 ### 3.2.1 메시지 문법
 
 * 요청 메시지: 서버에 동작 요구
-
 * 응답 메시지: 요청의 결과를 클라이언트에게 돌려줌
 
   ```text
   # 요청 메시지
   GET /specials/saw-blade.gif HTTP/1.0
   Host: www.joes-hardware.com
-  
+
   <메서드> <요청 URL> <버전>
   <헤더>
-  
+
   <엔티티 본문>
-  
+
   # 응답 메시지
   HTTP/1.0 200 OK
   Content-Type: image/gif
   Content-length: 8572
-  
+
   <버전> <상태 코드> <사유 구절>
   <헤더>
-  
+
   <엔티티 본문>
   ```
 
@@ -119,23 +118,20 @@
 ## 3.3 메서드
 
 * 클라이언트 측에서 서버가 리소스에 대해 수행해주길 바라는 동작을 요청 메시지에 전달
-
 * 한 단어로 되어 있음 \(ex. `GET`, `HEAD`, `POST`\)
-
 * 확장 메서드: 특정 서버가 추가로 구현한 HTTP 메서드
 
-  | 메서드  | 설명                                                    | 본문 |
-  | :------ | :------------------------------------------------------ | :--- |
-  | GET     | 서버에서 어떤 문서를 가져온다.                          | X    |
-  | HEAD    | 서버에서 어떤 문서에 대해 헤더만 가져온다.              | X    |
-  | POST    | 서버가 처리해야 할 데이터를 보낸다.                     | O    |
-  | PUT     | 서버에 요청 메시지의 본문을 저장한다.                   | O    |
-  | TRACE   | 메시지가 프락시를 거쳐 서버에 도달하는 과정을 추적한다. | X    |
-  | OPTIONS | 서버가 어떤 메서드를 수행할 수 있는지 확인한다.         | X    |
-  | DELETE  | 서버에서 문서를 제거한다.                               | X    |
+  | 메서드 | 설명 | 본문 |
+  | :--- | :--- | :--- |
+  | GET | 서버에서 어떤 문서를 가져온다. | X |
+  | HEAD | 서버에서 어떤 문서에 대해 헤더만 가져온다. | X |
+  | POST | 서버가 처리해야 할 데이터를 보낸다. | O |
+  | PUT | 서버에 요청 메시지의 본문을 저장한다. | O |
+  | TRACE | 메시지가 프락시를 거쳐 서버에 도달하는 과정을 추적한다. | X |
+  | OPTIONS | 서버가 어떤 메서드를 수행할 수 있는지 확인한다. | X |
+  | DELETE | 서버에서 문서를 제거한다. | X |
 
 * 모든 서버가 모든 메서드를 구현하지는 않음
-
 * 메서드는 대부분 제한적으로 사용됨 \(아무나 메서드를 사용할 수 없음\)
 
 ### 3.3.1 안전한 메서드
@@ -146,56 +142,56 @@
 
 ### 3.3.2 GET
 
-- 서버에게 리소스를 달라고 요청
-- HTTP/1.1은 서버가 GET을 구현할 것을 요구함
+* 서버에게 리소스를 달라고 요청
+* HTTP/1.1은 서버가 GET을 구현할 것을 요구함
 
 ### 3.3.3 HEAD
 
-- GET처럼 행동하지만, 응답으로 헤더만 돌려주는 것
-- GET으로 얻는 헤더와 같은 헤더이고 엔티티 본문만 없는 것
-- 리소스가 삭제되거나 변경되었는지 검사
-- 리소스를 가져오지 않고 타입 등 정보를 알아냄
-- HTTP/1.1 준수를 위해서는 HEAD가 반드시 구현되어 있어야 함
+* GET처럼 행동하지만, 응답으로 헤더만 돌려주는 것
+* GET으로 얻는 헤더와 같은 헤더이고 엔티티 본문만 없는 것
+* 리소스가 삭제되거나 변경되었는지 검사
+* 리소스를 가져오지 않고 타입 등 정보를 알아냄
+* HTTP/1.1 준수를 위해서는 HEAD가 반드시 구현되어 있어야 함
 
 ### 3.3.4 PUT
 
-- 서버에 요청의 본문을 가지고 요청 URL의 이름대로 새 문서를 만드는 것
-- 이미 해당 URL이 존재한다면 요청의 본문으로 교체하는 것
-- 많은 웹 서버가 PUT에 사용자 비밀번호를 이용해 로그인할 것을 요구함
+* 서버에 요청의 본문을 가지고 요청 URL의 이름대로 새 문서를 만드는 것
+* 이미 해당 URL이 존재한다면 요청의 본문으로 교체하는 것
+* 많은 웹 서버가 PUT에 사용자 비밀번호를 이용해 로그인할 것을 요구함
 
 ### 3.3.5 POST
 
-- 서버에 입력 데이터를 전송 (ex. HTML 폼)
-- 데이터는 서버로 전송되고, 서버는 이를 모아서 필요로 하는 곳(게이트웨이 등)에 보냄
+* 서버에 입력 데이터를 전송 \(ex. HTML 폼\)
+* 데이터는 서버로 전송되고, 서버는 이를 모아서 필요로 하는 곳\(게이트웨이 등\)에 보냄
 
 > 정리한 사람 주: PUT과 POST의 차이는 요청 URL
 
 ### 3.3.6 TRACE
 
-- 요청이 방화벽, 프락시, 게이트웨이 등 여러 애플리케이션을 통과할 수 있기 때문에, 클라이언트가 자신의 요청이 뮥적지 서버에 도달했을 때 어떻게 보이는지 TRACE를 통해 알 수 있다.
-- 요청은 엔티티 본문과 함께 보낼 수 없으며, 응답에는 서버가 받은 요청이 그대로 들어 있다.
-- loopback 진단
-  - 마지막 단계에 있는 서버는 자신이 받은 요청 메시지를 본문에 넣어 응답
-  - 클라이언트는 자신과 목적지 서버 사이에 있는 모든 HTTP 애플리케이션의 요청/응답 연쇄를 따라감
-  - 프락시나 다른 애플리케이션이 요청에 어떤 영향을 미치는지 확인
-- 문제점: 중간 애플리케이션들이 TRACE 요청을 일관되게 다루지 않을 수 있음
+* 요청이 방화벽, 프락시, 게이트웨이 등 여러 애플리케이션을 통과할 수 있기 때문에, 클라이언트가 자신의 요청이 뮥적지 서버에 도달했을 때 어떻게 보이는지 TRACE를 통해 알 수 있다.
+* 요청은 엔티티 본문과 함께 보낼 수 없으며, 응답에는 서버가 받은 요청이 그대로 들어 있다.
+* loopback 진단
+  * 마지막 단계에 있는 서버는 자신이 받은 요청 메시지를 본문에 넣어 응답
+  * 클라이언트는 자신과 목적지 서버 사이에 있는 모든 HTTP 애플리케이션의 요청/응답 연쇄를 따라감
+  * 프락시나 다른 애플리케이션이 요청에 어떤 영향을 미치는지 확인
+* 문제점: 중간 애플리케이션들이 TRACE 요청을 일관되게 다루지 않을 수 있음
 
 ### 3.3.7 OPTIONS
 
-- 리소스에 접근하지 않고 서버에게 특정 리소스에 대해 어떤 메서드가 지원되는지 물어봄
+* 리소스에 접근하지 않고 서버에게 특정 리소스에 대해 어떤 메서드가 지원되는지 물어봄
 
 ### 3.3.8 DELETE
 
-- 서버에게 요청 URL의 리소스를 삭제할 것을 요청
-- HTTP 명세는 서버가 클라이언트에게 알리지 않고 요청을 무시하는 것을 허용함. 따라서 삭제가 보장되지는 않는다.
+* 서버에게 요청 URL의 리소스를 삭제할 것을 요청
+* HTTP 명세는 서버가 클라이언트에게 알리지 않고 요청을 무시하는 것을 허용함. 따라서 삭제가 보장되지는 않는다.
 
 ### 3.3.9 확장 메서드
 
-- HTTP/1.1 명세에 정의되지 않은 메서드
-- ex. WebDav HTTP 확장: LOCK(리소스 잠금), MKCOL(문서 생성), COPY(복사), MOVE(이동)
-- "엄격하게 보내고 관대하게 받아들여라"
-  - 프락시는 알려지지 않은 메서드가 담긴 메시지도 다운스트림 서버로 전달한다.
-  - 해당 메서드가 end-to-end에 영향을 끼친다면, 501 Not Implemented 상태 코드로 응답한다.
+* HTTP/1.1 명세에 정의되지 않은 메서드
+* ex. WebDav HTTP 확장: LOCK\(리소스 잠금\), MKCOL\(문서 생성\), COPY\(복사\), MOVE\(이동\)
+* "엄격하게 보내고 관대하게 받아들여라"
+  * 프락시는 알려지지 않은 메서드가 담긴 메시지도 다운스트림 서버로 전달한다.
+  * 해당 메서드가 end-to-end에 영향을 끼친다면, 501 Not Implemented 상태 코드로 응답한다.
 
 ## 3.4 상태 코드
 
@@ -207,127 +203,313 @@
 
 **다섯 가지 분류**
 
-| 전체 범위 | 정의된 범위 | 분류            |
-| :-------- | :---------- | :-------------- |
-| 100-199   | 100-101     | 정보            |
-| 200-299   | 200-206     | 성공            |
-| 300-399   | 300-305     | 리다이렉션      |
-| 400-499   | 400-415     | 클라이언트 에러 |
-| 500-599   | 500-505     | 서버 에러       |
+| 전체 범위 | 정의된 범위 | 분류 |
+| :--- | :--- | :--- |
+| 100-199 | 100-101 | 정보 |
+| 200-299 | 200-206 | 성공 |
+| 300-399 | 300-305 | 리다이렉션 |
+| 400-499 | 400-415 | 클라이언트 에러 |
+| 500-599 | 500-505 | 서버 에러 |
 
 * 인식할 수 없는 상태 코드를 받게 되면 그것이 포함되는 범위의 일부라고 가정해야 함
 * ex. 515는 다른 5XX 메시지들과 마찬가지로 서버 에러를 의미할 것
 
 ### 3.4.1 100-199: 정보성 상태 코드
 
-- HTTP/1.1에서 도입되었으며 감수할 만한 가치가 있는지 논란이 있음
+* HTTP/1.1에서 도입되었으며 감수할 만한 가치가 있는지 논란이 있음
 
-| 상태 코드 | 사유 구절           | 의미                                                         |
-| --------- | ------------------- | ------------------------------------------------------------ |
-| 100       | Continue            | 요청의 시작 부분 일부가 받아들여졌음                         |
-| 101       | Switching Protocols | 서버가 프로토콜을 클라이언트가 Upgrade 헤더에 나열한 것들 중 하나로 바꿈 |
+| 상태 코드 | 사유 구절 | 의미 |
+| :--- | :--- | :--- |
+| 100 | Continue | 요청의 시작 부분 일부가 받아들여졌음 |
+| 101 | Switching Protocols | 서버가 프로토콜을 클라이언트가 Upgrade 헤더에 나열한 것들 중 하나로 바꿈 |
 
 #### 100 Continue
 
-- 엔티티 본문을 서버가 받아들일 것인지 확인할 때 사용
-- 클라이언트는 100 Continue를 받고 나머지 요청을 계속 이어 보내야 함
-- 서버는 100 Continue를 보낸 이후 요청을 받아 응답해야 함
+* 엔티티 본문을 서버가 받아들일 것인지 확인할 때 사용
+* 클라이언트는 100 Continue를 받고 나머지 요청을 계속 이어 보내야 함
+* 서버는 100 Continue를 보낸 이후 요청을 받아 응답해야 함
 
 #### 클라이언트와 100 Continue
 
-- 클라이언트는 첫 번째 요청의 헤더에 `Expect: 100-continue`를 보내야 함
-- 최적화: 서버가 다루거나 사용할 수 없는 큰 엔티티를 보내지 않기 위함
-- 클라이언트는 서버가 100-continue 응답을 내려주기를 마냥 기다리면 안 되고, 약간의 타임아웃 후에 그냥 엔티티를 보내야 함
-- 클라이언트는 예상하지 못한 100 Continue 응답에도 대비해야 함
+* 클라이언트는 첫 번째 요청의 헤더에 `Expect: 100-continue`를 보내야 함
+* 최적화: 서버가 다루거나 사용할 수 없는 큰 엔티티를 보내지 않기 위함
+* 클라이언트는 서버가 100-continue 응답을 내려주기를 마냥 기다리면 안 되고, 약간의 타임아웃 후에 그냥 엔티티를 보내야 함
+* 클라이언트는 예상하지 못한 100 Continue 응답에도 대비해야 함
 
 #### 서버와 100 Continue
 
-- 요청 헤더에 `Expect: 100-continue`가 있는 경우에만 100 Continue 응답을 주어야
-- 서버가 응답을 보내기 전 엔티티의 일부 혹은 전체를 받았다면, 100 Continue를 생략하고 해당 요청에 대한 응답만 보내면 됨
-- 100 Continue 요청을 받고 본문을 읽기 전 요청을 끝내기로 결정했을 때, 응답을 보내고 연결을 닫아 버리면 클라이언트는 응답을 받을 수 없게 됨 (cf. 4장 TCP 끊기와 리셋 에러)
+* 요청 헤더에 `Expect: 100-continue`가 있는 경우에만 100 Continue 응답을 주어야
+* 서버가 응답을 보내기 전 엔티티의 일부 혹은 전체를 받았다면, 100 Continue를 생략하고 해당 요청에 대한 응답만 보내면 됨
+* 100 Continue 요청을 받고 본문을 읽기 전 요청을 끝내기로 결정했을 때, 응답을 보내고 연결을 닫아 버리면 클라이언트는 응답을 받을 수 없게 됨 \(cf. 4장 TCP 끊기와 리셋 에러\)
 
 #### 프락시와 100 Continue
 
 프락시가 100 Continue 요청을 받았을 때,
 
-- 다음 홉 서버가 HTTP/1.1을 따르거나, 어떤 버전을 따르는지 모른다면, 요청을 다음으로 전달
-- 다음 홉 서버가 HTTP/1.1 이전 버전이라면 417 Expecation Failed 에러로 응답
+* 다음 홉 서버가 HTTP/1.1을 따르거나, 어떤 버전을 따르는지 모른다면, 요청을 다음으로 전달
+* 다음 홉 서버가 HTTP/1.1 이전 버전이라면 417 Expecation Failed 에러로 응답
+
+> [홉 \(네트워크\)](https://ko.wikipedia.org/wiki/%ED%99%89_%28%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%29)
 
 ### 3.4.2 200-299: 성공 상태 코드
 
-| 상태 코드 | 사유 구절                     | 의미                                                         |
-| --------- | ----------------------------- | ------------------------------------------------------------ |
-| 200       | OK                            | 요청 정상, 엔티티 본문에 요청 리소스 포함                    |
-| 201       | Created                       | 생성 요청(ex.PUT)에 대해 리소스를 생성함<br />헤더에는 생성된 리소스의 구체적인 참조(Location 헤더) 포함<br />엔티티 본문에는 리소스를 참조할 수 있는 여러 URL 포함 |
-| 202       | Accepted                      | 요청은 정상이나 서버는 어떤 동작도 수행하지 않음<br />엔티티 본문에 요청에 대한 상태와 가급적이면 언제 완료될 수 있는지에 대한 추정 포함해야 함 |
-| 203       | Non-Authoritative Information | 엔티티 헤더에 들어있는 정보가 원래 서버가 아닌 중개자의 리소스 사본에서 옴<br />중개자가 리소스 사본을 갖고 있었지만 리소스의 헤더는 검증되지 않은 경우 발생 |
-| 204       | No Content                    | 응답에 헤더와 상태줄은 포함하고 엔티티 본문은 포함하지 않음<br />웹브라우저를 새 문서로 이동시키지 않고 갱신 (ex. 폼 리프레시) |
-| 205       | Reset Conent                  | 브라우저에게 현재 페이지에 있는 모든 HTML 폼 값을 비우라고 말함 |
-| 206       | Partial Content               | 부분 혹은 범위 요청이 성공<br />Content-Range, Date 헤더를 반드시 포함<br />Etag/Content-Location 헤더 중 하나도 반드시 포함 |
-
-> cf. [ETag](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag)
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC0C1;&#xD0DC; &#xCF54;&#xB4DC;</th>
+      <th style="text-align:left">&#xC0AC;&#xC720; &#xAD6C;&#xC808;</th>
+      <th style="text-align:left">&#xC758;&#xBBF8;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">200</td>
+      <td style="text-align:left">OK</td>
+      <td style="text-align:left">&#xC694;&#xCCAD; &#xC815;&#xC0C1;, &#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0;
+        &#xC694;&#xCCAD; &#xB9AC;&#xC18C;&#xC2A4; &#xD3EC;&#xD568;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">201</td>
+      <td style="text-align:left">Created</td>
+      <td style="text-align:left">&#xC0DD;&#xC131; &#xC694;&#xCCAD;(ex.PUT)&#xC5D0; &#xB300;&#xD574; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
+        &#xC0DD;&#xC131;&#xD568;
+        <br />&#xD5E4;&#xB354;&#xC5D0;&#xB294; &#xC0DD;&#xC131;&#xB41C; &#xB9AC;&#xC18C;&#xC2A4;&#xC758;
+        &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xCC38;&#xC870;(Location &#xD5E4;&#xB354;)
+        &#xD3EC;&#xD568;
+        <br />&#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0;&#xB294; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
+        &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5EC;&#xB7EC; URL
+        &#xD3EC;&#xD568;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">202</td>
+      <td style="text-align:left">Accepted</td>
+      <td style="text-align:left">
+        <p>&#xC694;&#xCCAD;&#xC740; &#xC815;&#xC0C1;&#xC774;&#xB098; &#xC11C;&#xBC84;&#xB294;
+          &#xC5B4;&#xB5A4; &#xB3D9;&#xC791;&#xB3C4; &#xC218;&#xD589;&#xD558;&#xC9C0;
+          &#xC54A;&#xC74C;</p>
+        <p>(&#xC694;&#xCCAD;&#xC744; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xC5D0;&#xC11C;
+          &#xCC98;&#xB9AC;&#xD558;&#xAC70;&#xB098;, &#xC11C;&#xBC84;&#xAC00; &#xB2E4;&#xB978;
+          &#xC77C;&#xC744; &#xD558;&#xACE0; &#xC788;&#xAE30; &#xB54C;&#xBB38;)
+          <br
+          />&#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0; &#xC694;&#xCCAD;&#xC5D0;
+          &#xB300;&#xD55C; &#xC0C1;&#xD0DC;&#xC640; &#xAC00;&#xAE09;&#xC801;&#xC774;&#xBA74;
+          &#xC5B8;&#xC81C; &#xC644;&#xB8CC;&#xB420; &#xC218; &#xC788;&#xB294;&#xC9C0;&#xC5D0;
+          &#xB300;&#xD55C; &#xCD94;&#xC815; &#xD3EC;&#xD568;&#xD574;&#xC57C; &#xD568;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">203</td>
+      <td style="text-align:left">Non-Authoritative Information</td>
+      <td style="text-align:left">&#xC5D4;&#xD2F0;&#xD2F0; &#xD5E4;&#xB354;&#xC5D0; &#xB4E4;&#xC5B4;&#xC788;&#xB294;
+        &#xC815;&#xBCF4;&#xAC00; &#xC6D0;&#xB798; &#xC11C;&#xBC84;&#xAC00; &#xC544;&#xB2CC;
+        &#xC911;&#xAC1C;&#xC790;&#xC758; &#xB9AC;&#xC18C;&#xC2A4; &#xC0AC;&#xBCF8;&#xC5D0;&#xC11C;
+        &#xC634;
+        <br />&#xC911;&#xAC1C;&#xC790;&#xB85C;&#xBD80; &#xB9AC;&#xC18C;&#xC2A4; &#xC0AC;&#xBCF8;&#xC744;
+        &#xBC1B;&#xC558;&#xC9C0;&#xB9CC;, &#xB9AC;&#xC18C;&#xC2A4; &#xD5E4;&#xB354;&#xAC00;
+        &#xC11C;&#xBC84;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xB294;
+        &#xACBD;&#xC6B0;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">204</td>
+      <td style="text-align:left">No Content</td>
+      <td style="text-align:left">&#xBCF8;&#xBB38;&#xC73C;&#xB85C; &#xBCF4;&#xB0B4;&#xC904; &#xAC83;&#xC740;
+        &#xC5C6;&#xC9C0;&#xB9CC;, &#xD5E4;&#xB354;&#xC640; &#xC0C1;&#xD0DC;&#xC904;&#xC774;
+        &#xC758;&#xBBF8; &#xC788;&#xB294; &#xACBD;&#xC6B0;
+        <br />&#xC6F9;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB97C; &#xC0C8; &#xBB38;&#xC11C;&#xB85C;
+        &#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xACE0; &#xAC31;&#xC2E0;
+        (ex. &#xD3FC; &#xB9AC;&#xD504;&#xB808;&#xC2DC;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">205</td>
+      <td style="text-align:left">Reset Conent</td>
+      <td style="text-align:left">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xAC8C; &#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0;&#xC5D0;
+        &#xC788;&#xB294; &#xBAA8;&#xB4E0; HTML &#xD3FC; &#xAC12;&#xC744; &#xBE44;&#xC6B0;&#xB77C;&#xACE0;
+        &#xB9D0;&#xD568;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">206</td>
+      <td style="text-align:left">Partial Content</td>
+      <td style="text-align:left">&#xBD80;&#xBD84; &#xD639;&#xC740; &#xBC94;&#xC704; &#xC694;&#xCCAD;&#xC774;
+        &#xC131;&#xACF5;
+        <br />Content-Range, Date &#xD5E4;&#xB354;&#xB97C; &#xBC18;&#xB4DC;&#xC2DC;
+        &#xD3EC;&#xD568;
+        <br />Etag/Content-Location &#xD5E4;&#xB354; &#xC911; &#xD558;&#xB098;&#xB3C4;
+        &#xBC18;&#xB4DC;&#xC2DC; &#xD3EC;&#xD568;</td>
+    </tr>
+  </tbody>
+</table>> cf. [ETag](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag)
 
 ### 3.4.3 300-399: 리다이렉션 상태 코드
 
-- 리소스가 옮겨진 사실과 어디서 찾을 수 있는지(Location 헤더, optional)를 알려줌
-- 리다이렉트될 URL에 대한 링크와 설명을 포함하면 좋음
-- 클라이언트의 복사본이 여전히 최신인지, 원래 서버에 있는 리소스가 수정되었는지 검사
+* 리소스가 옮겨진 사실과 어디서 찾을 수 있는지\(Location 헤더, optional\)를 알려줌
+* 리다이렉트될 URL에 대한 링크와 설명을 포함하면 좋음
+* 클라이언트의 복사본이 여전히 최신인지, 원래 서버에 있는 리소스가 수정되었는지 검사
 
-| 상태 코드 | 사유 구절          | 의미                                                         |
-| --------- | ------------------ | ------------------------------------------------------------ |
-| 300       | Multiple Choices   | 동시에 여러 리소스를 가리키는 URL을 요청한 경우, 리소스 목록과 함께 반환함 |
-| 301       | Moved Permanently  | 요청한 URL이 Location 헤더에 있는 URL로 옮겨짐               |
-| 302       | Found              | 301과 같으나, 클라이언트는 Location 헤더의 URL을 임시로만 사용하고 이후에는 원래 URL을 사용해야 함 |
-| 303       | See Other          | 리소스를 Location 헤더에 있는 URL에서 가져와야 한다고 알려줌<br />POST에 대한 응답으로 클라이언트에게 리소스 위치를 알려줌 |
-| 304       | Not Modified       | 클라이언트가 조건부 요청을 했을 때 리소스가 최근에 수정되지 않았음을 알려줌<br />응답은 엔티티 본문을 포함하지 않음 |
-| 305       | Use Proxy          | 특정 리소스에 접근할 때 Location 헤더에 있는 프록시 URL을 통해야 함 |
-| 306       |                    | (현재는 사용되지 않는 코드)                                  |
-| 307       | Temporary Redirect | 301과 비슷하나, 클라이언트는 Location 헤더의 URL을 임시로만 사용하고 이후에는 원래 URL을 사용해야 함 |
+| 상태 코드 | 사유 구절 | 의미 |
+| :--- | :--- | :--- |
+| 300 | Multiple Choices | 동시에 여러 리소스를 가리키는 URL을 요청한 경우, 리소스 목록과 함께 반환함 |
+| 301 | Moved Permanently | 요청한 URL이 Location 헤더에 있는 URL로 옮겨짐 |
+| 302 | Found | 301과 같으나, 클라이언트는 Location 헤더의 URL을 임시로만 사용하고 이후에는 원래 URL을 사용해야 함 |
+| 303 | See Other | 리소스를 Location 헤더에 있는 URL에서 가져와야 한다고 알려줌 POST에 대한 응답으로 클라이언트에게 리소스 위치를 알려줌 |
+| 304 | Not Modified | 클라이언트가 조건부 요청을 했을 때 리소스가 최근에 수정되지 않았음을 알려줌 응답은 엔티티 본문을 포함하지 않음 |
+| 305 | Use Proxy | 특정 리소스에 접근할 때 Location 헤더에 있는 프록시 URL을 통해야 함 |
+| 306 |  | \(현재는 사용되지 않는 코드\) |
+| 307 | Temporary Redirect | 301과 비슷하나, 클라이언트는 Location 헤더의 URL을 임시로만 사용하고 이후에는 원래 URL을 사용해야 함 |
 
 302, 303, 307은 HTTP/1.0과 1.1에서 다름
 
 > 서버가 POST 요청을 받은 뒤, 클라이언트가 리다이렉션 URL을 받고, GET 요청으로 리다이렉트를 따라가기를 기대하는 상황이라면
 
-- HTTP 1.0 클라이언트: 302 응답을 받고 GET 요청으로 Location 헤더에 있는 URL을 따라감
-- HTTP 1.1 클라이언트: 303 응답을 받고 GET 요청으로 Location 헤더에 있는 URL을 따라감 (307은 그대로 POST 메소드 사용할 때)
+* HTTP 1.0 클라이언트: 302 응답을 받고 GET 요청으로 Location 헤더에 있는 URL을 따라감
+* HTTP 1.1 클라이언트: 303 응답을 받고 GET 요청으로 Location 헤더에 있는 URL을 따라감 \(307은 그대로 POST 메소드 사용할 때\)
 
 ### 3.4.4 400-499: 클라이언트 에러 상태 코드
 
-| 상태 코드 | 사유 구절                       | 의미                                                         |
-| --------- | ------------------------------- | ------------------------------------------------------------ |
-| 400       | Bad Request                     | 클라이언트가 잘못된 요청을 보냄                              |
-| 401       | Unauthorized                    | 클라이언트에게 인증 요구                                     |
-| 402       | Payment Required                | (현재 쓰이지 않음, 미래에 사용될 가능성)                     |
-| 403       | Forbidden                       | 요청이 서버에 의해 거부됨<br />엔티티 본문에 거부 이유를 설명할 수 있으나, 보통 거절의 이유를 숨기고 싶을 때 씀 |
-| 404       | Not Found                       | 서버가 요청한 URL을 찾을 수 없음                             |
-| 405       | Method Not Allowed              | 요청 URL에 대해 지운하지 않는 메서드로 요청받음              |
-| 406       | Not Acceptable                  | 주어진 URL에 대한 리소스 중 클라이언트가 받아들일 수 있는 것이 없음 |
-| 407       | Proxy Authentication Required   | 401과 같으나 프락시 서버를 위해 사용함                       |
-| 408       | Request Timeout                 | 클라이언트의 요청을 완수하기에 시간이 너무 많이 걸림         |
-| 409       | Conflict                        | 요청이 충돌을 일으킬 염려가 있음<br />본문에 충돌에 대해 설명해야 함 |
-| 410       | Gone                            | 404와 비슷하나 리소스를 가지고 있었다 제거된 경우            |
-| 411       | Length Required                 | 요청에 Content-Length 헤더 요구                              |
-| 412       | Precondition Failed             | 조건부 요청 중 하나가 실패                                   |
-| 413       | Request Entity Too Large        | 요청의 크기가 서버가 처리할 수 있는(or 처리하고자 하는) 한계를 넘음 |
-| 414       | Request URI Too Long            | 요청 URL 길이가 서버가 처리할 수 있는(or 처리하고자 하는) 한계를 넘음 |
-| 415       | Unsupported Media Type          | 서버가 지원하지 않는 유형의 엔티티 본문                      |
-| 416       | Requested Range Not Satisfiable | 요청한 리소스의 범위가 잘못됨                                |
-| 417       | Expectation Failed              | Expect 요청 해더에 있는 내용을 서버가 만족시킬 수 없음       |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC0C1;&#xD0DC; &#xCF54;&#xB4DC;</th>
+      <th style="text-align:left">&#xC0AC;&#xC720; &#xAD6C;&#xC808;</th>
+      <th style="text-align:left">&#xC758;&#xBBF8;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">400</td>
+      <td style="text-align:left">Bad Request</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC798;&#xBABB;&#xB41C;
+        &#xC694;&#xCCAD;&#xC744; &#xBCF4;&#xB0C4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">401</td>
+      <td style="text-align:left">Unauthorized</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC778;&#xC99D;
+        &#xC694;&#xAD6C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">402</td>
+      <td style="text-align:left">Payment Required</td>
+      <td style="text-align:left">(&#xD604;&#xC7AC; &#xC4F0;&#xC774;&#xC9C0; &#xC54A;&#xC74C;, &#xBBF8;&#xB798;&#xC5D0;
+        &#xC0AC;&#xC6A9;&#xB420; &#xAC00;&#xB2A5;&#xC131;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">403</td>
+      <td style="text-align:left">Forbidden</td>
+      <td style="text-align:left">&#xC694;&#xCCAD;&#xC774; &#xC11C;&#xBC84;&#xC5D0; &#xC758;&#xD574; &#xAC70;&#xBD80;&#xB428;
+        <br
+        />&#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0; &#xAC70;&#xBD80; &#xC774;&#xC720;&#xB97C;
+        &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC73C;&#xB098;, &#xBCF4;&#xD1B5;
+        &#xAC70;&#xC808;&#xC758; &#xC774;&#xC720;&#xB97C; &#xC228;&#xAE30;&#xACE0;
+        &#xC2F6;&#xC744; &#xB54C; &#xC500;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">404</td>
+      <td style="text-align:left">Not Found</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xC694;&#xCCAD;&#xD55C; URL&#xC744; &#xCC3E;&#xC744;
+        &#xC218; &#xC5C6;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">405</td>
+      <td style="text-align:left">Method Not Allowed</td>
+      <td style="text-align:left">&#xC694;&#xCCAD; URL&#xC5D0; &#xB300;&#xD574; &#xC9C0;&#xD558;&#xC9C0;
+        &#xC54A;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xC694;&#xCCAD;&#xBC1B;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">406</td>
+      <td style="text-align:left">Not Acceptable</td>
+      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; URL&#xC5D0; &#xB300;&#xD55C; &#xB9AC;&#xC18C;&#xC2A4;
+        &#xC911; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC694;&#xCCAD;&#xD55C;
+        &#xADDC;&#xACA9;&#xC5D0; &#xB9DE;&#xB294; &#xAC83;&#xC774; &#xC5C6;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">407</td>
+      <td style="text-align:left">Proxy Authentication Required</td>
+      <td style="text-align:left">401&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC; &#xC11C;&#xBC84;&#xB97C;
+        &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD568;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">408</td>
+      <td style="text-align:left">Request Timeout</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xC694;&#xCCAD;&#xC744;
+        &#xC644;&#xC218;&#xD558;&#xAE30;&#xC5D0; &#xC2DC;&#xAC04;&#xC774; &#xB108;&#xBB34;
+        &#xB9CE;&#xC774; &#xAC78;&#xB9BC;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">409</td>
+      <td style="text-align:left">Conflict</td>
+      <td style="text-align:left">
+        <p>&#xC694;&#xCCAD;&#xC774; &#xCDA9;&#xB3CC;&#xC744; &#xC77C;&#xC73C;&#xD0AC;
+          &#xC5FC;&#xB824;&#xAC00; &#xC788;&#xC74C;
+          <br />&#xBCF8;&#xBB38;&#xC5D0; &#xCDA9;&#xB3CC;&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD574;&#xC57C;
+          &#xD568;</p>
+        <p>ex. &#xC11C;&#xBC84;&#xC5D0; &#xC788;&#xB294; &#xD30C;&#xC77C;&#xBCF4;&#xB2E4;
+          &#xC624;&#xB798;&#xB41C; &#xD30C;&#xC77C;&#xC744; PU&#xC73C;&#xB85C; &#xC5C5;&#xB85C;&#xB4DC;&#xD560;
+          &#xB54C; &#xBC84;&#xC804; &#xC81C;&#xC5B4; &#xCDA9;&#xB3CC;&#xC774; &#xBC1C;&#xC0DD;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">410</td>
+      <td style="text-align:left">Gone</td>
+      <td style="text-align:left">404&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB098; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
+        &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5C8;&#xB2E4; &#xC81C;&#xAC70;&#xB41C;
+        &#xACBD;&#xC6B0;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">411</td>
+      <td style="text-align:left">Length Required</td>
+      <td style="text-align:left">&#xC694;&#xCCAD;&#xC5D0; Content-Length &#xD5E4;&#xB354; &#xC694;&#xAD6C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">412</td>
+      <td style="text-align:left">Precondition Failed</td>
+      <td style="text-align:left">&#xC870;&#xAC74;&#xBD80; &#xC694;&#xCCAD; &#xC911; &#xD558;&#xB098;&#xAC00;
+        &#xC2E4;&#xD328;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">413</td>
+      <td style="text-align:left">Request Entity Too Large</td>
+      <td style="text-align:left">&#xC694;&#xCCAD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xC11C;&#xBC84;&#xAC00;
+        &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;(or &#xCC98;&#xB9AC;&#xD558;&#xACE0;&#xC790;
+        &#xD558;&#xB294;) &#xD55C;&#xACC4;&#xB97C; &#xB118;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">414</td>
+      <td style="text-align:left">Request URI Too Long</td>
+      <td style="text-align:left">&#xC694;&#xCCAD; URL &#xAE38;&#xC774;&#xAC00; &#xC11C;&#xBC84;&#xAC00;
+        &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;(or &#xCC98;&#xB9AC;&#xD558;&#xACE0;&#xC790;
+        &#xD558;&#xB294;) &#xD55C;&#xACC4;&#xB97C; &#xB118;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">415</td>
+      <td style="text-align:left">Unsupported Media Type</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294;
+        &#xC720;&#xD615;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">416</td>
+      <td style="text-align:left">Requested Range Not Satisfiable</td>
+      <td style="text-align:left">&#xC694;&#xCCAD;&#xD55C; &#xB9AC;&#xC18C;&#xC2A4;&#xC758; &#xBC94;&#xC704;&#xAC00;
+        &#xC798;&#xBABB;&#xB428;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">417</td>
+      <td style="text-align:left">Expectation Failed</td>
+      <td style="text-align:left">Expect &#xC694;&#xCCAD; &#xB354;&#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744;
+        &#xC11C;&#xBC84;&#xAC00; &#xB9CC;&#xC871;&#xC2DC;&#xD0AC; &#xC218; &#xC5C6;&#xC74C;</td>
+    </tr>
+  </tbody>
+</table>### 3.4.5 500-599: 서버 에러 상태 코드
 
-### 3.4.5 500-599: 서버 에러 상태 코드
+* 클라이언트에서 올바른 요청을 보냈지만 서버에서 에러 발생
 
-- 클라이언트에서 올바른 요청을 보냈지만 서버에서 에러 발생
-
-| 상태 코드 | 사유 구절                  | 의미                                                         |
-| --------- | -------------------------- | ------------------------------------------------------------ |
-| 500       | Server Error               | 서버가 요청을 처리할 수 없음                                 |
-| 501       | Not Implemented            | 클라이언트가 서버의 능력을 넘은 요청을 함                    |
-| 502       | Bad Gateway                | 프락시나 게이트웨이 등이 다음 링크로부터 부정적인 응답을 받음 |
-| 503       | Service Unavailabe         | 현재는 서버가 요청을 처리해줄 수 없지만 나중에는 가능함<br />Retry-After 헤더에 언제 가능한지를 포함하기도 함 |
-| 504       | Gateway Timeout            | 408과 비슷하지만 게이트웨이나 프록시가 보내는 응답           |
-| 505       | HTTP Version Not Supported | 요청 프로토콜이 서버가 지원할 수 없는 버전임                 |
-
-
+| 상태 코드 | 사유 구절 | 의미 |
+| :--- | :--- | :--- |
+| 500 | Server Error | 서버가 요청을 처리할 수 없음 |
+| 501 | Not Implemented | 클라이언트가 서버가 구현하지 않은 메서드로 요청을 함 |
+| 502 | Bad Gateway | 프락시나 게이트웨이 등 다음 링크로부터 부정적인 응답을 받음 |
+| 503 | Service Unavailabe | 현재는 서버가 요청을 처리해줄 수 없지만 나중에는 가능함 Retry-After 헤더에 언제 가능한지를 포함하기도 함 |
+| 504 | Gateway Timeout | 408과 비슷하지만 게이트웨이나 프록시가 보내는 응답 |
+| 505 | HTTP Version Not Supported | 요청 프로토콜이 서버가 지원할 수 없는 버전임 |
 
 ## 3.5 헤더
 
@@ -336,171 +518,151 @@
 
 ### 3.5.1 일반 헤더
 
-- 클라이언트, 서버 모두 사용
-- 메시지에 대한 기본적 정보 제공
+* 클라이언트, 서버 모두 사용
+* 메시지에 대한 기본적 정보 제공
 
-| 헤더                     | 설명                                                  |
-| ------------------------ | ----------------------------------------------------- |
-| Connection               | 요청/응답 연결에 대한 옵션                            |
-| Date                     | 메시지가 만들어진 날짜와 시간                         |
-| MIME-Version             | MIME 버전                                             |
+| 헤더 | 설명 |
+| :--- | :--- |
+| Connection | 요청/응답 연결에 대한 옵션 |
+| Date | 메시지가 만들어진 날짜와 시간 |
+| MIME-Version | MIME 버전 |
 | Trailer chunked transfer | 인코딩된 메시지의 끝 부분에 위치한 헤더들의 목록 나열 |
-| Transfer-Encoding        | 어떤 인코딩이 적용되었는지                            |
-| Upgrade                  | 업그레이드하길 원하는 새 버전이나 프로토콜            |
-| Via                      | 프락시, 게이트웨이 등 메시지가 거쳐온 중개자          |
+| Transfer-Encoding | 어떤 인코딩이 적용되었는지 |
+| Upgrade | 업그레이드하길 원하는 새 버전이나 프로토콜 |
+| Via | 프락시, 게이트웨이 등 메시지가 거쳐온 중개자 |
 
 #### 일반 캐시 헤더
 
 매번 서버로부터 객체를 가져오는 대신 사본으로 캐시해주는 헤더
 
-| 헤더          | 설명                                 |
-| ------------- | ------------------------------------ |
-| Cache-Control | 캐시 지시자 전달                     |
-| Pragma        | 캐시 지시자 전달을 위한 또 다른 방법 |
+| 헤더 | 설명 |
+| :--- | :--- |
+| Cache-Control | 캐시 지시자 전달 |
+| Pragma | 캐시 지시자 전달을 위한 또 다른 방법 |
 
 ### 3.5.2 요청 헤더
 
-- 요청 메시지에 사용
-- 클라이언트의 선호나 능력
-- 서버가 더 나은 응답을 주는 데 활용
+* 요청 메시지에 사용
+* 클라이언트의 선호나 능력
+* 서버가 더 나은 응답을 주는 데 활용
 
-| 헤더       | 설명                                       |
-| ---------- | ------------------------------------------ |
-| Client-IP  | 클라이언트 IP                              |
-| From       | 클라이언트 사용자의 메일 주소              |
-| Host       | 요청의 대상이 되는 서버의 호스트 명과 포트 |
-| Referer    | 요청 URI가 들어있었던 문서의 URL           |
-| UA-Color   | 클라이언트 기기의 디스플레이 색상 능력     |
-| UA-CPU     | 클라이언트 기기의 CPU                      |
-| UA-OS      | 클라이언트 기기의 OS                       |
-| UA-Pixels  | 클라이언트 기기의 디스플레이 픽셀          |
-| User-Agent | 요청을 보낸 애플리케이션의 이름            |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Client-IP | 클라이언트 IP |
+| From | 클라이언트 사용자의 메일 주소 |
+| Host | 요청의 대상이 되는 서버의 호스트 명과 포트 |
+| Referer | 요청 URI가 들어있었던 문서의 URL |
+| UA-Color | 클라이언트 기기의 디스플레이 색상 능력 |
+| UA-CPU | 클라이언트 기기의 CPU |
+| UA-OS | 클라이언트 기기의 OS |
+| UA-Pixels | 클라이언트 기기의 디스플레이 픽셀 |
+| User-Agent | 요청을 보낸 애플리케이션의 이름 |
 
 #### Accept 관련 헤더
 
-| 헤더            | 설명                              |
-| --------------- | --------------------------------- |
-| Accept          | 서버가 보내도 되는 미디어 종류    |
-| Accept-Charset  | 서버가 보내도 되는 문자 집합      |
-| Accept-Encoding | 서버가 보내도 되는 인코딩         |
-| Accept-Language | 서버가 보내도 되는 언어           |
-| TE              | 서버가 보내도 되는 확장 전송 코딩 |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Accept | 서버가 보내도 되는 미디어 종류 |
+| Accept-Charset | 서버가 보내도 되는 문자 집합 |
+| Accept-Encoding | 서버가 보내도 되는 인코딩 |
+| Accept-Language | 서버가 보내도 되는 언어 |
+| TE | 서버가 보내도 되는 확장 전송 코딩 |
 
 #### 조건부 요청 헤더
 
-| 헤더                | 설명                                                         |
-| ------------------- | ------------------------------------------------------------ |
-| Expect              | 요청에 필요한 서버의 행동                                    |
-| If-Match            | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치해야 함        |
-| If-None-Match       | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치하지 않아야 함 |
-| If-Modified-Since   | 주어진 날짜 이후에 리소스가 변경되었을 때만 요청 (변경되지 않았으면 제한) |
-| If-Unmodified-Since | 주어진 날짜 이후에 리소스가 변경되지 않았을 때만 요청 (변경되었으면 제한) |
-| If-Range            | 문서의 범위에 대한 요청                                      |
-| Range               | 리소스에 대한 특정 범위를 요청                               |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Expect | 요청에 필요한 서버의 행동 |
+| If-Match | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치해야 함 |
+| If-None-Match | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치하지 않아야 함 |
+| If-Modified-Since | 주어진 날짜 이후에 리소스가 변경되었을 때만 요청 \(변경되지 않았으면 제한\) |
+| If-Unmodified-Since | 주어진 날짜 이후에 리소스가 변경되지 않았을 때만 요청 \(변경되었으면 제한\) |
+| If-Range | 문서의 범위에 대한 요청 |
+| Range | 리소스에 대한 특정 범위를 요청 |
 
 #### 요청 보안 헤더
 
-| 헤더          | 설명                                                         |
-| ------------- | ------------------------------------------------------------ |
-| Authorization | 인증 자체에 대한 정보                                        |
-| Cookie        | 클라이언트가 서버에게 토큰 전달<br />보안 헤더는 아니지만 보안에 영향을 줌 |
-| Cookie2       | 클라이언트가 지원하는 쿠키의 버전                            |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Authorization | 인증 자체에 대한 정보 |
+| Cookie | 클라이언트가 서버에게 토큰 전달 보안 헤더는 아니지만 보안에 영향을 줌 |
+| Cookie2 | 클라이언트가 지원하는 쿠키의 버전 |
 
 #### 프락시 요청 헤더
 
-| 헤더                | 설명                                                         |
-| ------------------- | ------------------------------------------------------------ |
-| Max-Forwards        | 요청이 프락시나 게이트웨이로 전달될 수 있는 최대 횟수<br />TRACE 메서드와 함께 사용됨 |
-| Proxy-Authorization | Authorization과 같으나 프락시에서 인증할 때 쓰임             |
-| Proxy-Connection    | Connection과 같으나 프락시에서 연결을 맺을 때 쓰임           |
-
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Max-Forwards | 요청이 프락시나 게이트웨이로 전달될 수 있는 최대 횟수 TRACE 메서드와 함께 사용됨 |
+| Proxy-Authorization | Authorization과 같으나 프락시에서 인증할 때 쓰임 |
+| Proxy-Connection | Connection과 같으나 프락시에서 연결을 맺을 때 쓰임 |
 
 ### 3.5.3 응답 헤더
 
-- 응답 메시지에 사용
+* 응답 메시지에 사용
 
-| 헤더        | 설명                                                         |
-| ----------- | ------------------------------------------------------------ |
-| Age         | 응답이 얼마나 오래되었는지 (프락시와 같은 중개자를 거쳐왔을 때) |
-| Public      | 특정 리소스에 대해 지원하는 메서드 목록                      |
-| Retry-After | 리소스가 현재 사용 불가능할 때 언제 가능해지는지             |
-| Server      | 서버 애플리케이션의 이름과 버전                              |
-| Title       | HTML 문서 제목                                               |
-| Warning     | 자세한 경고 메시지                                           |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Age | 응답이 얼마나 오래되었는지 \(프락시와 같은 중개자를 거쳐왔을 때\) |
+| Public | 특정 리소스에 대해 지원하는 메서드 목록 |
+| Retry-After | 리소스가 현재 사용 불가능할 때 언제 가능해지는지 |
+| Server | 서버 애플리케이션의 이름과 버전 |
+| Title | HTML 문서 제목 |
+| Warning | 자세한 경고 메시지 |
 
 #### 협상 헤더
 
-- 서버에 여러 가지 표현이 가능한 문서가 있을 때, 서버와 클라이언트가 그 중 어떤 표현을 택할 것인지 협상 지원
-- ex. 서버에 한국어, 영어로 번역된 HTML 문서가 있을 때
+* 서버에 여러 가지 표현이 가능한 문서가 있을 때, 서버와 클라이언트가 그 중 어떤 표현을 택할 것인지 협상 지원
+* ex. 서버에 한국어, 영어로 번역된 HTML 문서가 있을 때
 
-| 헤더          | 설명                                                         |
-| ------------- | ------------------------------------------------------------ |
-| Accept-Ranges | 서버가 자원에 대해 받아들일 수 있는 범위의 형태              |
-| Vary          | 응답에 영향을 줄 수 있어서 서버가 확인해 보아야 하는 헤더들의 목록 |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Accept-Ranges | 서버가 자원에 대해 받아들일 수 있는 범위의 형태 |
+| Vary | 응답에 영향을 줄 수 있어서 서버가 확인해 보아야 하는 헤더들의 목록 |
 
 #### 응답 보안 헤더
 
-| 헤더               | 설명                                                         |
-| ------------------ | ------------------------------------------------------------ |
-| Proxy-Authenticate | 프락시에서 클라이언트로 보낸 인증 요구의 목록                |
-| Set-Cookie         | 클라이언트에 토큰을 설정하기 위해 사용<br />보안 헤더는 아니지만 보안에 영향을 줌 |
-| Set-Cookie2        | Set-Cookie와 비슷하되 RFC 2965로 정의됨                      |
-| WWW-Authenticate   | 서버에서 클라이언트로 보낸 인증 요구의 목록                  |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Proxy-Authenticate | 프락시에서 클라이언트로 보낸 인증 요구의 목록 |
+| Set-Cookie | 클라이언트에 토큰을 설정하기 위해 사용 보안 헤더는 아니지만 보안에 영향을 줌 |
+| Set-Cookie2 | Set-Cookie와 비슷하되 RFC 2965로 정의됨 |
+| WWW-Authenticate | 서버에서 클라이언트로 보낸 인증 요구의 목록 |
 
 ### 3.5.4 엔티티 헤더
 
-- 엔티티 본문에 대한 헤더
-- 요청과 응답 메시지 모두에 나타날 수 있음
+* 엔티티 본문에 대한 헤더
+* 요청과 응답 메시지 모두에 나타날 수 있음
 
-| 헤더     | 설명                                     |
-| -------- | ---------------------------------------- |
-| Allow    | 엔티티에 대해 수행될 수 있는 메서드 목록 |
-| Location | 리소스의 (새로운) URL                    |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Allow | 엔티티에 대해 수행될 수 있는 메서드 목록 |
+| Location | 리소스의 \(새로운\) URL |
 
 #### 콘텐츠 헤더
 
-| 헤더             | 설명                                        |
-| ---------------- | ------------------------------------------- |
-| Content-Base     | 본문의 상대 URL에 대한 기저 URL             |
-| Content-Encoding | 본문에 적용된 인코딩                        |
-| Content-Language | 본문의 언어(자연어)                         |
-| Content-Length   | 본문 길이                                   |
-| Content-Location | 리소스 위치                                 |
-| Content-MD5      | MD5 checksum                                |
-| Content-Range    | 전체 리소스에서 해당 엔티티의 범위 (바이트) |
-| Content-Type     | 본문의 종류                                 |
-
-
+| 헤더 | 설명 |
+| :--- | :--- |
+| Content-Base | 본문의 상대 URL에 대한 기저 URL |
+| Content-Encoding | 본문에 적용된 인코딩 |
+| Content-Language | 본문의 언어\(자연어\) |
+| Content-Length | 본문 길이 |
+| Content-Location | 리소스 위치 |
+| Content-MD5 | MD5 checksum |
+| Content-Range | 전체 리소스에서 해당 엔티티의 범위 \(바이트\) |
+| Content-Type | 본문의 종류 |
 
 #### 엔티티 캐싱 헤더
 
-- 언제 어떻게 캐시가 되어야 하는지, 캐시된 사본이 유효한지, 리소스가 유효하지 않게 되는 시점이 언제인지 등
+* 언제 어떻게 캐시가 되어야 하는지, 캐시된 사본이 유효한지, 리소스가 유효하지 않게 되는 시점이 언제인지 등
 
-| 헤더          | 설명                             |
-| ------------- | -------------------------------- |
-| ETag          | 엔티티 태그                      |
-| Expires       | 엔티티가 유효하지 않게 되는 일시 |
-| Last-Modified | 엔티티가 최근 변경된 일시        |
+| 헤더 | 설명 |
+| :--- | :--- |
+| ETag | 엔티티 태그 |
+| Expires | 엔티티가 유효하지 않게 되는 일시 |
+| Last-Modified | 엔티티가 최근 변경된 일시 |
 
 cf. 확장 헤더
 
-- HTTP 명세에 없는 헤더
-- HTTP 애플리케이션은 확장 헤더의 의미를 몰라도 용인하고 전달할 수 있어야 함
+* HTTP 명세에 없는 헤더
+* HTTP 애플리케이션은 확장 헤더의 의미를 몰라도 용인하고 전달할 수 있어야 함
+
