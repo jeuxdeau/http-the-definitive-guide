@@ -521,26 +521,81 @@
 * 클라이언트, 서버 모두 사용
 * 메시지에 대한 기본적 정보 제공
 
-| 헤더 | 설명 |
-| :--- | :--- |
-| Connection | 요청/응답 연결에 대한 옵션 |
-| Date | 메시지가 만들어진 날짜와 시간 |
-| MIME-Version | MIME 버전 |
-| Trailer chunked transfer | 인코딩된 메시지의 끝 부분에 위치한 헤더들의 목록 나열 |
-| Transfer-Encoding | 어떤 인코딩이 적용되었는지 |
-| Upgrade | 업그레이드하길 원하는 새 버전이나 프로토콜 |
-| Via | 프락시, 게이트웨이 등 메시지가 거쳐온 중개자 |
-
-#### 일반 캐시 헤더
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Connection</td>
+      <td style="text-align:left">&#xD604;&#xC7AC;&#xC758; &#xC804;&#xC1A1;&#xC774; &#xC644;&#xB8CC;&#xB41C;
+        &#xD6C4; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC811;&#xC18D;&#xC744; &#xC720;&#xC9C0;&#xD560;&#xC9C0;
+        &#xB9D0;&#xC9C0;&#xB97C; &#xC81C;&#xC5B4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Date</td>
+      <td style="text-align:left">&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC;&#xC640;
+        &#xC2DC;&#xAC04;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">MIME-Version</td>
+      <td style="text-align:left">
+        <p>MIME &#xBC84;&#xC804; (&#xD604;&#xC7AC; 1.0)</p>
+        <p>&#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xD574;&#xB2F9; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00;
+          MIME &#xD615;&#xC2DD;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C4;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Trailer</td>
+      <td style="text-align:left">&#xC778;&#xCF54;&#xB529;&#xB41C; (chunked) &#xBA54;&#xC2DC;&#xC9C0;&#xC758;
+        &#xB05D; &#xBD80;&#xBD84;&#xC5D0; &#xCD94;&#xAC00; &#xD5E4;&#xB354;&#xB4E4;&#xC758;
+        &#xBAA9;&#xB85D;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Transfer-Encoding</td>
+      <td style="text-align:left">&#xC5B4;&#xB5A4; &#xC778;&#xCF54;&#xB529;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC5C8;&#xB294;&#xC9C0;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Upgrade</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xD558;&#xAE38;
+        &#xC6D0;&#xD558;&#xB294; &#xC0C8; &#xBC84;&#xC804;&#xC774;&#xB098; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Via</td>
+      <td style="text-align:left">&#xD504;&#xB77D;&#xC2DC;, &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xB4F1;
+        &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xAC70;&#xCCD0;&#xC628; &#xC911;&#xAC1C;&#xC790;</td>
+    </tr>
+  </tbody>
+</table>#### 일반 캐시 헤더
 
 매번 서버로부터 객체를 가져오는 대신 사본으로 캐시해주는 헤더
 
-| 헤더 | 설명 |
-| :--- | :--- |
-| Cache-Control | 캐시 지시자 전달 |
-| Pragma | 캐시 지시자 전달을 위한 또 다른 방법 |
-
-### 3.5.2 요청 헤더
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Cache-Control</td>
+      <td style="text-align:left">
+        <p>&#xCE90;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790; &#xC804;&#xB2EC;</p>
+        <p>cf. <a href="https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9">&#xCFE0;&#xD0A4;/&#xCE90;&#xC2DC; &#xD5E4;</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Pragma</td>
+      <td style="text-align:left">&#xCE90;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790; &#xC804;&#xB2EC;&#xC744; &#xC704;&#xD55C;
+        &#xB610; &#xB2E4;&#xB978; &#xBC29;&#xBC95;</td>
+    </tr>
+  </tbody>
+</table>### 3.5.2 요청 헤더
 
 * 요청 메시지에 사용
 * 클라이언트의 선호나 능력
@@ -560,49 +615,142 @@
 
 #### Accept 관련 헤더
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Accept</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xBBF8;&#xB514;&#xC5B4;
+        &#xC885;&#xB958;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Accept-Charset</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xBB38;&#xC790;
+        &#xC9D1;&#xD569;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Accept-Encoding</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xC778;&#xCF54;&#xB529;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Accept-Language</td>
+      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xC5B8;&#xC5B4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">TE</td>
+      <td style="text-align:left">
+        <p>&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xD655;&#xC7A5;
+          &#xC804;&#xC1A1; &#xCF54;&#xB529;</p>
+        <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/TE">TE</a> (en)</p>
+        <p><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Transfer-Encoding">transfer encodings</a>(ko)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>#### 조건부 요청 헤더
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Expect</td>
+      <td style="text-align:left">&#xC694;&#xCCAD;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC11C;&#xBC84;&#xC758;
+        &#xD589;&#xB3D9;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">If-Match</td>
+      <td style="text-align:left">
+        <p>&#xBB38;&#xC11C;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;(ETag)&#xAC00;
+          &#xC8FC;&#xC5B4;&#xC9C4; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xC640;
+          &#xC77C;&#xCE58;&#xD574;&#xC57C; &#xD568;</p>
+        <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag">ETag</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">If-None-Match</td>
+      <td style="text-align:left">&#xBB38;&#xC11C;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xAC00;
+        &#xC8FC;&#xC5B4;&#xC9C4; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xC640;
+        &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xC57C; &#xD568;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">If-Modified-Since</td>
+      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC; &#xC774;&#xD6C4;&#xC5D0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00;
+        &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC744; &#xB54C;&#xB9CC; &#xC694;&#xCCAD;
+        (&#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBA74; &#xC81C;&#xD55C;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">If-Unmodified-Since</td>
+      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC; &#xC774;&#xD6C4;&#xC5D0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00;
+        &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C;&#xB9CC;
+        &#xC694;&#xCCAD; (&#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC73C;&#xBA74; &#xC81C;&#xD55C;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">If-Range</td>
+      <td style="text-align:left">&#xBB38;&#xC11C;&#xC758; &#xBC94;&#xC704;&#xC5D0; &#xB300;&#xD55C; &#xC694;&#xCCAD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Range</td>
+      <td style="text-align:left">&#xB9AC;&#xC18C;&#xC2A4;&#xC5D0; &#xB300;&#xD55C; &#xD2B9;&#xC815; &#xBC94;&#xC704;&#xB97C;
+        &#xC694;&#xCCAD;</td>
+    </tr>
+  </tbody>
+</table>#### 요청 보안 헤더
+
 | 헤더 | 설명 |
 | :--- | :--- |
-| Accept | 서버가 보내도 되는 미디어 종류 |
-| Accept-Charset | 서버가 보내도 되는 문자 집합 |
-| Accept-Encoding | 서버가 보내도 되는 인코딩 |
-| Accept-Language | 서버가 보내도 되는 언어 |
-| TE | 서버가 보내도 되는 확장 전송 코딩 |
-
-#### 조건부 요청 헤더
-
-| 헤더 | 설명 |
-| :--- | :--- |
-| Expect | 요청에 필요한 서버의 행동 |
-| If-Match | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치해야 함 |
-| If-None-Match | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치하지 않아야 함 |
-| If-Modified-Since | 주어진 날짜 이후에 리소스가 변경되었을 때만 요청 \(변경되지 않았으면 제한\) |
-| If-Unmodified-Since | 주어진 날짜 이후에 리소스가 변경되지 않았을 때만 요청 \(변경되었으면 제한\) |
-| If-Range | 문서의 범위에 대한 요청 |
-| Range | 리소스에 대한 특정 범위를 요청 |
-
-#### 요청 보안 헤더
-
-| 헤더 | 설명 |
-| :--- | :--- |
-| Authorization | 인증 자체에 대한 정보 |
+| Authorization | 인증 자체에 대한 정보 \(ex. `username:pw`\) |
 | Cookie | 클라이언트가 서버에게 토큰 전달 보안 헤더는 아니지만 보안에 영향을 줌 |
 | Cookie2 | 클라이언트가 지원하는 쿠키의 버전 |
 
 #### 프락시 요청 헤더
 
-| 헤더 | 설명 |
-| :--- | :--- |
-| Max-Forwards | 요청이 프락시나 게이트웨이로 전달될 수 있는 최대 횟수 TRACE 메서드와 함께 사용됨 |
-| Proxy-Authorization | Authorization과 같으나 프락시에서 인증할 때 쓰임 |
-| Proxy-Connection | Connection과 같으나 프락시에서 연결을 맺을 때 쓰임 |
-
-### 3.5.3 응답 헤더
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Max-Forwards</td>
+      <td style="text-align:left">
+        <p>&#xC694;&#xCCAD;&#xC774; &#xD504;&#xB77D;&#xC2DC;&#xB098; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xB85C;
+          &#xC804;&#xB2EC;&#xB420; &#xC218; &#xC788;&#xB294; &#xCD5C;&#xB300; &#xD69F;&#xC218;
+          <br
+          />TRACE &#xBA54;&#xC11C;&#xB4DC;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xB428;</p>
+        <p>cf. <a href="http://withbundo.blogspot.com/2017/08/http-15-http-v-max-forwards-proxy.html">Max-Forwards, Proxy-Authorization, Referer, TE</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Proxy-Authorization</td>
+      <td style="text-align:left">Authorization&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC;&#xC5D0;&#xC11C;
+        &#xC778;&#xC99D;&#xD560; &#xB54C; &#xC4F0;&#xC784;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Proxy-Connection</td>
+      <td style="text-align:left">Connection&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC;&#xC5D0;&#xC11C;
+        &#xC5F0;&#xACB0;&#xC744; &#xB9FA;&#xC744; &#xB54C; &#xC4F0;&#xC784;</td>
+    </tr>
+  </tbody>
+</table>### 3.5.3 응답 헤더
 
 * 응답 메시지에 사용
 
 | 헤더 | 설명 |
 | :--- | :--- |
-| Age | 응답이 얼마나 오래되었는지 \(프락시와 같은 중개자를 거쳐왔을 때\) |
+| Age | 응답이 얼마나 오래되었는지 초단위의 시간 보통 0이나 락시와 같은 중개자를 거쳐왔을 때는 있 |
 | Public | 특정 리소스에 대해 지원하는 메서드 목록 |
 | Retry-After | 리소스가 현재 사용 불가능할 때 언제 가능해지는지 |
 | Server | 서버 애플리케이션의 이름과 버전 |
@@ -614,12 +762,33 @@
 * 서버에 여러 가지 표현이 가능한 문서가 있을 때, 서버와 클라이언트가 그 중 어떤 표현을 택할 것인지 협상 지원
 * ex. 서버에 한국어, 영어로 번역된 HTML 문서가 있을 때
 
-| 헤더 | 설명 |
-| :--- | :--- |
-| Accept-Ranges | 서버가 자원에 대해 받아들일 수 있는 범위의 형태 |
-| Vary | 응답에 영향을 줄 수 있어서 서버가 확인해 보아야 하는 헤더들의 목록 |
-
-#### 응답 보안 헤더
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xD5E4;&#xB354;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Accept-Ranges</td>
+      <td style="text-align:left">&#xBD80;&#xBD84; &#xC694;&#xCCAD;&#xC744; &#xD560; &#xB54C; &#xC11C;&#xBC84;&#xAC00;
+        &#xC790;&#xC6D0;&#xC5D0; &#xB300;&#xD574; &#xBC1B;&#xC544;&#xB4E4;&#xC77C;
+        &#xC218; &#xC788;&#xB294; &#xBC94;&#xC704; &#xB2E8;&#xC704;&#xC758; &#xD615;&#xD0DC;
+        (ex. bytes)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Vary</td>
+      <td style="text-align:left">
+        <p>&#xC751;&#xB2F5;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC904; &#xC218; &#xC788;&#xC5B4;&#xC11C;
+          &#xC11C;&#xBC84;&#xAC00; &#xD655;&#xC778;&#xD574; &#xBCF4;&#xC544;&#xC57C;
+          &#xD558;&#xB294; &#xD5E4;&#xB354;&#xB4E4;&#xC758; &#xBAA9;&#xB85D;</p>
+        <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Vary">Vary</a>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>#### 응답 보안 헤더
 
 | 헤더 | 설명 |
 | :--- | :--- |

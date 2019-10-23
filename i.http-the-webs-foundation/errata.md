@@ -12,5 +12,9 @@
 
 → "**URL만 취급한다**"로 수정
 
+## 3. HTTP 메시지
+
+78p. 표 3-11: trailer chunked transfer → trailer
+
 
 
