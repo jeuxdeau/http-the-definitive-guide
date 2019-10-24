@@ -2,7 +2,7 @@
 
 ## 시간
 
-매주 월요일, 수요일 12:00-14:00 \(밥 먹는 시간 포함\)
+매주 월요일, 수요일 저녁 서현/역삼 \([공유 캘린더](https://calendar.google.com/calendar?cid=OXFwZnBxdWQ5N2hudjMxNGRsYzkzaXY4cjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)\)
 
 ## 방법
 
