@@ -56,9 +56,10 @@
 
 #### TCP status diagram
 ![tcp-connection_8.png](../../.gitbook/assets/tcp-connection_8.png)
-> TCP Fast Oepn[TCP Fast Open - Wikipedia](https://en.wikipedia.org/wiki/TCP_Fast_Open)
-> Client 에서 SYN + TFO cookie request 을 보내고 서버는 SYN + ACK + TFO cookie 를 응답으로 보낸다 -> 1RTT
-> 이후 Client 는 TFO cookie 로 암호화된 데이터와 함께 SYN 을 보내며 서버와 3-way handshake 를 진행한다 -> handshake 중 데이터 교환이 가능
+> TCP Fast Oepn ([TCP Fast Open - Wikipedia](https://en.wikipedia.org/wiki/TCP_Fast_Open))
+> - Client 에서 SYN + TFO cookie request 을 보내고 서버는 SYN + ACK + TFO cookie 를 응답으로 보낸다 -> 1RTT
+> - 이후 Client 는 TFO cookie 로 암호화된 데이터와 함께 SYN 을 보내며 서버와 3-way handshake 를 진행한다 -> handshake 중 데이터 교환이 가능
+
 ---
 * slow start
 	* TCP 프로토콜은 현재 네트워크 망의 혼잡 상태를 확인하여 한번에 전송하는 패킷의 양을 조절하는 알고리즘이 존재한다 (tcp congestion control)
