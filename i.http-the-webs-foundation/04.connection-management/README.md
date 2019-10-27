@@ -7,11 +7,15 @@
 > HTTP 요청에 따른 TCP 커넥션 동작
 
 ### 신뢰할 수 있는 데이터 전송 통로인 TCP
-* HTTP 프로그래머는 TCP/IP 계층에서 무슨 일이 일어나는지 보이지 않는다 [TCP 소켓 프로그래밍](https://github.com/jeuxdeau/http-the-definitive-guide/blob/master/i.http-the-webs-foundation/04.connection-management/README.md#tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+* HTTP 프로그래머는 TCP/IP 계층에서 무슨 일이 일어나는지 보이지 않는다 
+[TCP 소켓 프로그래밍](https://github.com/jeuxdeau/http-the-definitive-guide/blob/master/i.http-the-webs-foundation/04.connection-management/README.md#tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+
 ![tcp-connection_2.png](../../.gitbook/assets/tcp-connection_2.png)
 > HTTP 와 HTTPS 네트워크 프로토콜 스택
 > 추상화된 계층 구조를 통해 하위, 상위 프로토콜의 동작에 대해 알지 못해도 통신이 가능하도록 설계되었다
+
 * IP 패킷은 TCP 세그먼트를 포함하고 있다
+
 ![tcp-connection_3.png](../../.gitbook/assets/tcp-connection_3.png)
 > IP 패킷의 구조
 > TCP 세그먼트는 IP 패킷에 담겨 네트워크 상에 나가게 된다
@@ -52,7 +56,6 @@
 
 #### TCP status diagram
 ![tcp-connection_8.png](../../.gitbook/assets/tcp-connection_8.png)
-
 > TCP Fast Oepn[TCP Fast Open - Wikipedia](https://en.wikipedia.org/wiki/TCP_Fast_Open)
 > Client 에서 SYN + TFO cookie request 을 보내고 서버는 SYN + ACK + TFO cookie 를 응답으로 보낸다 -> 1RTT
 > 이후 Client 는 TFO cookie 로 암호화된 데이터와 함께 SYN 을 보내며 서버와 3-way handshake 를 진행한다 -> handshake 중 데이터 교환이 가능
@@ -156,11 +159,13 @@
 	* 적은 수의 병렬 커넥션을 지속 커넥션으로 맺어 사용
 ### HTTP/1.0+ 의 Keep-Alive 커넥션
 * 연속 커넥션과 지속 커넥션
+
 ![http-connection_3.png](../../.gitbook/assets/http-connection_3.png)
 > 지속 커넥션은 연속 커넥션에 비해 커넥션 수립/해제에 필요한 비용을 줄여 좋은 성능을 보여준다
 ### Keep-Alive 동작
 * Keep-Alive 는 depreacted 되어 HTTP/1.1 명세에서 빠졌다
 	* 하지만 지금도 많이 사용되고 있음
+	
 ![http-connection_4.png](../../.gitbook/assets/http-connection_4.png)
 > Client가 요청에 Connection : Keep-Alive 헤더를 포함시킨다
 > Server 는 응답에 Connection : Keep-Alive 헤더를 내려보내는데, 존재하지 않으면 클라이언트는 서버가 지원하지 않으며 커넥션이 종료될 것으로 추정한다
@@ -193,6 +198,7 @@
 ### Keep-Alive 와 멍청한 프록시
 * 중개 서버는 요청을 전달할 때 Connection 헤더와 관련된 필드를 모두 제거해야 한다
 * Connection 헤더를 인식하지 못하는 중개 서버가 Connection 헤더를 포함시켜 요청을 전달하는 문제가 발생할 수 있다
+
 ![http-connection_5.png](../../.gitbook/assets/http-connection_5.png)
 > 멍청한 프록시가 존재할 때 Connection:  Keep-Alive 헤더가 포함된 요청을 날리면?
 	1. 클라이언트는 Connection : Keep-Alive 헤더를 포함한 요청을 날린다
@@ -207,6 +213,7 @@
 > 위와 같은 문제를 피하기 위해 중개 서버는 Connetion 헤더와 관련된 모든 필드를 제거한 채 다음 서버로 전달해야 한다 (Proxy-Authenticate, Proxy-Connection, Transfer-Encoding, Upgrade 와 같은 헤더들도 홉별 헤더에 포함된다)
 ### Proxy-Connection 살펴보기
 * 모든 헤더를 무조건 전달하는 문제를 해결하기 위한 방안 중 하나로써 제시되었다
+
 ![http-connection_6.png](../../.gitbook/assets/http-connection_6.png)
 > Connection 헤더 대신 비표준 헤더인 Proxy-Connection 을 대신 사용함으로써 문제를 회피하고자 함.
 > 서버는 Proxy-Connection 헤더는 무시하고 Connection 헤더만 처리하며, 영리한 프락시는 Proxy-Connection 을 Connection 헤더로 바꿔 서버로 전송한다
@@ -234,6 +241,7 @@
 	* 응답이 도착하기 전까지 요청들은 큐에 쌓인다
 	* 이전 요청의 응답을 기다리지 않고 다음번 요청을 바로바로 전송한다
 	* 네트워크를 왕복하는 시간을 줄여 성능을 향상시킨다
+	
 ![http-connection_8.png](../../.gitbook/assets/http-connection_8.png)
 > 네 개의 트랜잭션을 처리하는 커넥션들
 
@@ -263,6 +271,7 @@
 	* 파이프라인 요청은 idempotnet 한 요청만 보내야 한다
 ### 우아한 커넥션 끊기
 * TCP 커넥션은 양방향 커넥션이다
+
 ![http-connection_9.png](../../.gitbook/assets/http-connection_9.png)
 > TCP 커넥션의 양쪽에는 각각의 입/출력 큐가 존재한다
 ![http-connection_10.png](../../.gitbook/assets/http-connection_10.png)
