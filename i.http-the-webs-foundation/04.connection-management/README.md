@@ -61,6 +61,7 @@
 > - 이후 Client 는 TFO cookie 로 암호화된 데이터와 함께 SYN 을 보내며 서버와 3-way handshake 를 진행한다 -> handshake 중 데이터 교환이 가능
 
 ---
+---
 * slow start
 	* TCP 프로토콜은 현재 네트워크 망의 혼잡 상태를 확인하여 한번에 전송하는 패킷의 양을 조절하는 알고리즘이 존재한다 (tcp congestion control)
 	* congestion window 의 크기는 1부터 시작하여 임계값에 도달할 때 까지 2의 지수배로 증가한다 (이후 1씩 증가)
@@ -68,6 +69,7 @@
 
 #### TCP congestion control
 ![tcp-connection_9.png](../../.gitbook/assets/tcp-connection_9.png)
+---
 ---
 * nagle algorithm
 	* TCP 세그먼트는 40바이트 상당의 헤더를 포함하기 때문에 아주 작은 크기의 데이터를 전송하면 오버헤드로 인한 부하가 증가할 수 있다
@@ -84,7 +86,8 @@
 		* 일반적으로 2MSL (Max Segment Lifetime - 약 1분)
 	* 현재는 라우터들의 성능이 향상되 중복 패킷이 발생하는 경우는 거의 없다
 	* TIME_WAIT 상태의 소켓을 재사용할 수 있도록 하는 옵션들도 
-
+---
+---
 #### TIME_WAIT 소켓 재사용
 * Linger 구조체 옵션
 	* LINGER.l_ onoff   / LINGER.l_ linger
