@@ -24,49 +24,51 @@
 - 그 후, 클라이언트에게 답해줄 응답 메시지를 타이핑하기를 기다린다.
 - HTTP 요청 메시지를 정확히 기록하고, 어떤 응답을 돌려보내줄 지를 흉내낸다.
 
-    #!/usr/bin/perl
-    
-    use Socket;
-    use Carp;
-    use FileHandle;
-    
-    $port = (@ARGV ? $ARGV[0] : 8080);
-    
-    $proto = getprotobyname('tcp');
-    socket(S, PF_INET, SOCK_STREAM, $proto) || die;
-    
-    setsockopt(S, SOL_SOCKET, SO_REUSEADDR, pack("l", 1)) || die;
-    
-    bind(S, sockaddr_in($port, INADDR_ANY)) || die;
-    
-    listen(S, SOMAXCONN) || die;
-    
-    print(" <<<Type-O-Serve Accepting on Port $d>>>\n\n", $port);
-    
-    while (1) {
-      $cport_caddr = accept(C, S);
-      ($cport, $caddr) = sockaddr_in($cport_caddr);
-      C->autoflush(1);
-    
-      $cname = gethostbyaddr($caddr, AF_INET);
-      print(" <<<Request From '%s'>>>\\n", $cname);
-    
-      while ($line = <C>) {
-        print $line;
-        if ($line =~ /^\r/)  { last; }
-      }
-    
-      printf(" <<<Type Response Followed by '.'>>>\n");
-    
-      while ($line = <STDIN>) {
-        $line =~ s/\r//;
-        $line =~s/\n//;
-        if ($line =~ /^\./) { last; }
-        print C $line . "\r\n";
-      }
-    
-      close(C);
-    }
+```
+#!/usr/bin/perl
+
+use Socket;
+use Carp;
+use FileHandle;
+
+$port = (@ARGV ? $ARGV[0] : 8080);
+
+$proto = getprotobyname('tcp');
+socket(S, PF_INET, SOCK_STREAM, $proto) || die;
+
+setsockopt(S, SOL_SOCKET, SO_REUSEADDR, pack("l", 1)) || die;
+
+bind(S, sockaddr_in($port, INADDR_ANY)) || die;
+
+listen(S, SOMAXCONN) || die;
+
+print(" <<<Type-O-Serve Accepting on Port $d>>>\n\n", $port);
+
+while (1) {
+  $cport_caddr = accept(C, S);
+  ($cport, $caddr) = sockaddr_in($cport_caddr);
+  C->autoflush(1);
+
+  $cname = gethostbyaddr($caddr, AF_INET);
+  print(" <<<Request From '%s'>>>\\n", $cname);
+
+  while ($line = <C>) {
+    print $line;
+    if ($line =~ /^\r/)  { last; }
+  }
+
+  printf(" <<<Type Response Followed by '.'>>>\n");
+
+  while ($line = <STDIN>) {
+    $line =~ s/\r//;
+    $line =~s/\n//;
+    if ($line =~ /^\./) { last; }
+    print C $line . "\r\n";
+  }
+
+  close(C);
+}
+```
 
 ## 5.3 진짜 웹 서버가 하는 일
 
@@ -101,10 +103,12 @@
 - hostname lookup은 많은 시간이 걸릴 수 있어, 꺼두거나 특정 콘텐츠에 대해서만 켜놓는다.
 - Apache server 설정으로 hostname lookup을 끄고, 특정 리소스에 대해서만 켜놓기
 
-    HostnameLookups off
-    <Files ~ "\.(html|htm|cgi)$">
-    	HostnameLookups on
-    </Files>
+```
+HostnameLookups off
+<Files ~ "\.(html|htm|cgi)$">
+  HostnameLookups on
+</Files>
+```
 
 **ident를 통해 클라이언트 사용자 알아내기**
 
@@ -114,35 +118,37 @@
     - 일반 로그 포멧(Common log format)의 두 번째 필드는 ident 사용자 이름을 담고 있다.
     - RFC 1413
 
-        1.  INTRODUCTION
-        
-           The Identification Protocol (a.k.a., "ident", a.k.a., "the Ident
-           Protocol") provides a means to determine the identity of a user of a
-           particular TCP connection.  Given a TCP port number pair, it returns
-           a character string which identifies the owner of that connection on
-           the server's system.
-        
-           The Identification Protocol was formerly called the Authentication
-           Server Protocol.  It has been renamed to better reflect its function.
-           This document is a product of the TCP Client Identity Protocol
-           Working Group of the Internet Engineering Task Force (IETF).
-        
-        2.  OVERVIEW
-        
-           This is a connection based application on TCP.  A server listens for
-           TCP connections on TCP port 113 (decimal).  Once a connection is
-           established, the server reads a line of data which specifies the
-           connection of interest.  If it exists, the system dependent user
-           identifier of the connection of interest is sent as the reply.  The
-           server may then either shut the connection down or it may continue to
-           read/respond to multiple queries.
-        
-           The server should close the connection down after a configurable
-           amount of time with no queries - a 60-180 second idle timeout is
-           recommended.  The client may close the connection down at any time;
-           however to allow for network delays the client should wait at least
-           30 seconds (or longer) after a query before abandoning the query and
-           closing the connection.
+```
+1.  INTRODUCTION
+
+   The Identification Protocol (a.k.a., "ident", a.k.a., "the Ident
+   Protocol") provides a means to determine the identity of a user of a
+   particular TCP connection.  Given a TCP port number pair, it returns
+   a character string which identifies the owner of that connection on
+   the server's system.
+
+   The Identification Protocol was formerly called the Authentication
+   Server Protocol.  It has been renamed to better reflect its function.
+   This document is a product of the TCP Client Identity Protocol
+   Working Group of the Internet Engineering Task Force (IETF).
+
+2.  OVERVIEW
+
+   This is a connection based application on TCP.  A server listens for
+   TCP connections on TCP port 113 (decimal).  Once a connection is
+   established, the server reads a line of data which specifies the
+   connection of interest.  If it exists, the system dependent user
+   identifier of the connection of interest is sent as the reply.  The
+   server may then either shut the connection down or it may continue to
+   read/respond to multiple queries.
+
+   The server should close the connection down after a configurable
+   amount of time with no queries - a 60-180 second idle timeout is
+   recommended.  The client may close the connection down at any time;
+   however to allow for network delays the client should wait at least
+   30 seconds (or longer) after a query before abandoning the query and
+   closing the connection.
+```
 
 - 클라이언트가 ident 프로토콜을 지원한다면, ident 결과를 위해 113번 포트를 listen한다.
 - 동작
@@ -227,18 +233,20 @@
 - 하나의 웹 서버 위에서 두 개의 사이트가 완전히 분리된 콘텐츠를 갖고 호스팅 되도록 한다.
 - Apache web server에서 가상 호스트 설정하기
 
-    <VirtualHost www.joes-hardware.com>
-    	ServerName www.joes-hardware.com
-      DocumentRoot /docs/joe
-      TransferLog /logs/joe.access_log
-      ErrorLog /logs/joe.error_log
-    </VirtualHost>
-    <VirtualHost www.marys-antiques.com>
-      ServerName www.marys-antiques.com
-      DocumentRoot /docs/mary
-      TransferLog /logs/mary.access_log
-      ErrorLog /logs/maery.error_log
-    </VirtualHost>
+```
+<VirtualHost www.joes-hardware.com>
+  ServerName www.joes-hardware.com
+  DocumentRoot /docs/joe
+  TransferLog /logs/joe.access_log
+  ErrorLog /logs/joe.error_log
+</VirtualHost>
+<VirtualHost www.marys-antiques.com>
+  ServerName www.marys-antiques.com
+  DocumentRoot /docs/mary
+  TransferLog /logs/mary.access_log
+  ErrorLog /logs/maery.error_log
+</VirtualHost>
+```
 
 **사용자 홈 디렉터리 docroots**
 
