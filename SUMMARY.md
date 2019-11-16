@@ -20,12 +20,12 @@
   * [Questions](i.http-the-webs-foundation/04.connection-management/04.connection-management-questions.md)
   * [Answers](i.http-the-webs-foundation/04.connection-management/04.connection-management-answers.md)
 
-## II. HTTP 아키텍처
+## II. HTTP 아키텍처 <a id="ii.http-architecture"></a>
 
-* [05. 웹 서버](ii.-http/05.web-server/README.md)
-  * [Questions](ii.-http/05.web-server/05.web-server-questions.md)
-  * [Answers](ii.-http/05.web-server/05.web-server-answers.md)
-* [06. 프락시](ii.-http/06.proxy/README.md)
-  * [Questions](ii.-http/06.proxy/06.proxy-questions.md)
-  * [Answers](ii.-http/06.proxy/06.proxy-answers.md)
+* [05. 웹 서버](ii.http-architecture/05.web-server/README.md)
+  * [Questions](ii.http-architecture/05.web-server/05.web-server-questions.md)
+  * [Answers](ii.http-architecture/05.web-server/05.web-server-answers.md)
+* [06. 프락시](ii.http-architecture/06.proxy/README.md)
+  * [Questions](ii.http-architecture/06.proxy/06.proxy-questions.md)
+  * [Answers](ii.http-architecture/06.proxy/06.proxy-answers.md)
 
