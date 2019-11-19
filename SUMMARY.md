@@ -1,6 +1,8 @@
 # Table of contents
 
 * [HTTP: The Definitive Guide](README.md)
+* [교재 정오표](errata.md)
+* [회의록](meeting-minutes.md)
 
 ## I. HTTP: 웹의 기초 <a id="i.http-the-webs-foundation"></a>
 
@@ -17,6 +19,13 @@
 * [04. 커넥션 관리](i.http-the-webs-foundation/04.connection-management/README.md)
   * [Questions](i.http-the-webs-foundation/04.connection-management/04.connection-management-questions.md)
   * [Answers](i.http-the-webs-foundation/04.connection-management/04.connection-management-answers.md)
-* [교재 정오표](i.http-the-webs-foundation/errata.md)
-* [회의록](i.http-the-webs-foundation/meeting-minutes.md)
+
+## II. HTTP 아키텍처 <a id="ii.http-architecture"></a>
+
+* [05. 웹 서버](ii.http-architecture/05.web-server/README.md)
+  * [Questions](ii.http-architecture/05.web-server/05.web-server-questions.md)
+  * [Answers](ii.http-architecture/05.web-server/05.web-server-answers.md)
+* [06. 프락시](ii.http-architecture/06.proxy/README.md)
+  * [Questions](ii.http-architecture/06.proxy/06.proxy-questions.md)
+  * [Answers](ii.http-architecture/06.proxy/06.proxy-answers.md)
 
