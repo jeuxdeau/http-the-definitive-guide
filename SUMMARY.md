@@ -28,7 +28,7 @@
 * [06. 프락시](ii.http-architecture/06.proxies/README.md)
   * [Questions](ii.http-architecture/06.proxies/06.proxies-questions.md)
   * [Answers](ii.http-architecture/06.proxies/06.proxies-answers.md)
-* [07. 캐시](07.caching/README.md)
-  * [Questions](07.caching/07.caching-questions.md)
-  * [Answers](07.caching/07.caching-answers.md)
+* [07. 캐시](ii.http-architecture/07.caching/README.md)
+  * [Questions](ii.http-architecture/07.caching/07.caching-questions.md)
+  * [Answers](ii.http-architecture/07.caching/07.caching-answers.md)
 
