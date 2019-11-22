@@ -25,7 +25,10 @@
 * [05. 웹 서버](ii.http-architecture/05.web-server/README.md)
   * [Questions](ii.http-architecture/05.web-server/05.web-server-questions.md)
   * [Answers](ii.http-architecture/05.web-server/05.web-server-answers.md)
-* [06. 프락시](ii.http-architecture/06.proxy/README.md)
-  * [Questions](ii.http-architecture/06.proxy/06.proxy-questions.md)
-  * [Answers](ii.http-architecture/06.proxy/06.proxy-answers.md)
+* [06. 프락시](ii.http-architecture/06.proxies/README.md)
+  * [Questions](ii.http-architecture/06.proxies/06.proxies-questions.md)
+  * [Answers](ii.http-architecture/06.proxies/06.proxies-answers.md)
+* [07. 캐시](07.caching/README.md)
+  * [Questions](07.caching/07.caching-questions.md)
+  * [Answers](07.caching/07.caching-answers.md)
 
