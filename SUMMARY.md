@@ -31,4 +31,7 @@
 * [07. 캐시](ii.http-architecture/07.caching/README.md)
   * [Questions](ii.http-architecture/07.caching/07.caching-questions.md)
   * [Answers](ii.http-architecture/07.caching/07.caching-answers.md)
+* [08. 통합점: 게이트웨이, 터널, 릴레이](08.integration-points/README.md)
+  * [Questions](08.integration-points/08.integration-points-questions.md)
+  * [Answers](08.integration-points/08.integration-points-answers.md)
 
