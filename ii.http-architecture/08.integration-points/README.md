@@ -44,7 +44,8 @@
 	7. RETR 로 객체 검색
 	8. FTP 서버에 데이터 커넥션을 맺고 객체가 게이트웨이로 전송됨
 	9. 전송된 객체를 HTTP 응답에 실어 클라이언트로 전송
-[image:F9040FFC-46C3-4CA3-A42A-62E0F92DD750-16254-00023F5D27227781/102F4288-B2B1-47B8-80D7-3A8165852D7B.png]
+![chapter_8_2.png](../../.gitbook/assets/chapter_8_2.png)
+
 
 #### HTTP/HTTPS: 서버 측 보안 게이트웨이
 * 클라이언트의 HTTP 요청을 HTTPS 로 암호화
@@ -62,11 +63,11 @@
 > Example
 * 클라이언트는 HTTP 를 사용해 어플리케이션 서버로 요청을 하고, 어플리케이션 서버는 게이트웨이를 사용해 요청의 최종 목적지인 어플리케이션과 통신하여 응답을 클라이언트로 반환
 * 클라이언트 <-> 어플리케이션 서버 <-> 어플리케이션 프로그램 
-![chapter_8_2.png](../../.gitbook/assets/chapter_8_2.png)
+![chapter_8_3.png](../../.gitbook/assets/chapter_8_3.png)
 
 
 * 어플리케이션 서버 <-> 게이트웨이 <-> 어플리케이션 프로그램
-![chapter_8_3.png](../../.gitbook/assets/chapter_8_3.png)
+![chapter_8_4.png](../../.gitbook/assets/chapter_8_4.png)
 
 
 #### 공용 게이트웨이 인터페이스
@@ -98,7 +99,7 @@
 * 웹 터널은 CONNECT 메서드를 사용해 커넥션을 맺을 수 있음
 	* 터널 게이트웨이가 목적 서버와 TCP 커넥션을 맺고, 클라이언트와 서버 간 오가는 데이터를 무조건 전달하기를 요청
 > Example
-![chapter_8_4.png](../../.gitbook/assets/chapter_8_4.png)
+![chapter_8_5.png](../../.gitbook/assets/chapter_8_5.png)
 
 1. CONNECT 요청을 보내 게이트웨이에 터널 연결 요청
 2. TCP 커넥션 생성 후 클라이언트로 200 응답 반환
@@ -130,7 +131,7 @@ CONNECT 응답 메세지는 커넥션이 메세지 대신 바이트를 그대로
 	* 중간에 SSL 을 지원하지 않는 프록시가 포함되어 있는 등의 이유로 SSL 통신이 불가능 할 때
 	* SSL 트래픽을 HTTP 커넥션으로 전송하여 방화벽을 통과
 > Example
-![chapter_8_5.png](../../.gitbook/assets/chapter_8_5.png)
+![chapter_8_6.png](../../.gitbook/assets/chapter_8_6.png)
 
 * SSL 트래픽은 처음에 HTTP 를 통해 전송되고 이후 SSL 커넥션에 의해 전송된다
 
