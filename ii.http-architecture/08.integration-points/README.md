@@ -99,6 +99,7 @@
 * 웹 터널은 CONNECT 메서드를 사용해 커넥션을 맺을 수 있음
 	* 터널 게이트웨이가 목적 서버와 TCP 커넥션을 맺고, 클라이언트와 서버 간 오가는 데이터를 무조건 전달하기를 요청
 > Example
+
 ![chapter_8_5.png](../../.gitbook/assets/chapter_8_5.png)
 
 1. CONNECT 요청을 보내 게이트웨이에 터널 연결 요청
@@ -131,6 +132,7 @@ CONNECT 응답 메세지는 커넥션이 메세지 대신 바이트를 그대로
 	* 중간에 SSL 을 지원하지 않는 프록시가 포함되어 있는 등의 이유로 SSL 통신이 불가능 할 때
 	* SSL 트래픽을 HTTP 커넥션으로 전송하여 방화벽을 통과
 > Example
+
 ![chapter_8_6.png](../../.gitbook/assets/chapter_8_6.png)
 
 * SSL 트래픽은 처음에 HTTP 를 통해 전송되고 이후 SSL 커넥션에 의해 전송된다
