@@ -1,8 +1,37 @@
 # Table of contents
 
 * [HTTP: The Definitive Guide](README.md)
+* [교재 정오표](errata.md)
+* [회의록](meeting-minutes.md)
 
 ## I. HTTP: 웹의 기초 <a id="i.http-the-webs-foundation"></a>
 
-* [1. HTTP 개관 \(1\)](i.http-the-webs-foundation/01.overview-of-http-1.md)
+* [01. HTTP 개관](i.http-the-webs-foundation/01.overview-of-http/README.md)
+  * [Questions](i.http-the-webs-foundation/01.overview-of-http/01.overview-of-http-questions.md)
+  * [Answers](i.http-the-webs-foundation/01.overview-of-http/01.overview-of-http-answers.md)
+  * [Discussions](i.http-the-webs-foundation/01.overview-of-http/01.overview-of-http-discussions.md)
+* [02. URL과 리소스](i.http-the-webs-foundation/02.urls-and-resources/README.md)
+  * [Questions](i.http-the-webs-foundation/02.urls-and-resources/02.urls-and-resources-questions.md)
+  * [Answers](i.http-the-webs-foundation/02.urls-and-resources/02.urls-and-resources-answers.md)
+* [03. HTTP 메시지](i.http-the-webs-foundation/03.http-messages/README.md)
+  * [Questions](i.http-the-webs-foundation/03.http-messages/03.http-messages-questions.md)
+  * [Answers](i.http-the-webs-foundation/03.http-messages/03.http-messages-answers.md)
+* [04. 커넥션 관리](i.http-the-webs-foundation/04.connection-management/README.md)
+  * [Questions](i.http-the-webs-foundation/04.connection-management/04.connection-management-questions.md)
+  * [Answers](i.http-the-webs-foundation/04.connection-management/04.connection-management-answers.md)
+
+## II. HTTP 아키텍처 <a id="ii.http-architecture"></a>
+
+* [05. 웹 서버](ii.http-architecture/05.web-server/README.md)
+  * [Questions](ii.http-architecture/05.web-server/05.web-server-questions.md)
+  * [Answers](ii.http-architecture/05.web-server/05.web-server-answers.md)
+* [06. 프락시](ii.http-architecture/06.proxies/README.md)
+  * [Questions](ii.http-architecture/06.proxies/06.proxies-questions.md)
+  * [Answers](ii.http-architecture/06.proxies/06.proxies-answers.md)
+* [07. 캐시](ii.http-architecture/07.caching/README.md)
+  * [Questions](ii.http-architecture/07.caching/07.caching-questions.md)
+  * [Answers](ii.http-architecture/07.caching/07.caching-answers.md)
+* [08. 통합점: 게이트웨이, 터널, 릴레이](08.integration-points/README.md)
+  * [Questions](08.integration-points/08.integration-points-questions.md)
+  * [Answers](08.integration-points/08.integration-points-answers.md)
 
