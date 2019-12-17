@@ -34,4 +34,7 @@
 * [08. 통합점: 게이트웨이, 터널, 릴레이](ii.http-architecture/08.integration-points/README.md)
   * [Questions](ii.http-architecture/08.integration-points/08.integration-points-questions.md)
   * [Answers](ii.http-architecture/08.integration-points/08.integration-points-answers.md)
+* [09. 웹 로봇](ii.http-architecture/09.web-robots/README.md)
+  * [Questions](ii.http-architecture/09.web-robots/09.web-robots-questions.md)
+  * [Answers](ii.http-architecture/09.web-robots/09.web-robots-answers.md)
 
