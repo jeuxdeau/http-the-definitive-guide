@@ -37,5 +37,7 @@
 * [09. 웹 로봇](ii.http-architecture/09.web-robots/README.md)
   * [Questions](ii.http-architecture/09.web-robots/09.web-robots-questions.md)
   * [Answers](ii.http-architecture/09.web-robots/09.web-robots-answers.md)
-* [10. HTTP/2.0](ii.http-architecture/10.http-2.0.md)
+* [10. HTTP/2.0](ii.http-architecture/10.http-2.0/README.md)
+  * [Questions](ii.http-architecture/10.http-2.0/10.http-2.0-questions.md)
+  * [Answers](ii.http-architecture/10.http-2.0/10.http-2.0-answers.md)
 
