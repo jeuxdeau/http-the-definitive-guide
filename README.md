@@ -2,7 +2,7 @@
 
 ## 시간
 
-매주 하 저녁 서현/강남 \([공유 캘린더](https://calendar.google.com/calendar?cid=OXFwZnBxdWQ5N2hudjMxNGRsYzkzaXY4cjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)\)
+매주 저녁 서현/강남 \([공유 캘린더](https://calendar.google.com/calendar?cid=OXFwZnBxdWQ5N2hudjMxNGRsYzkzaXY4cjBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)\)
 
 ## 방법
 
