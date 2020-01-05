@@ -224,5 +224,147 @@ ex. 광고 회사
 * 광고에 관련 쿠키 광고사 서버에서 만든 지속 쿠키이다. 즉, 해당 쿠키의 도메인은 광고 회사로 설정되어 있다.
 * 사용자가 A 사이트에서 B 사이트로 옮겨 가도 브라우저는 같은 지속 쿠키를 광고사 서버에 전송할 수 있다.
 
+#### 11.6.5 쿠키 구성요소
 
+현재 사용되는 쿠키 명세는 RFC 6265이다. 이 책에서는 현재 쓰이지 않는 Version 0 쿠키\(넷스케이프 쿠키\), Version 1 쿠키\(RFC 2965\)를 다룬다.
+
+#### 11.6.6 Version 0\(넷스케이프\) 쿠키
+
+1. 형식
+
+```text
+Set-cookie: name=value [; expires=date] [; path=path] [; domain=domain] [; secure]
+Cookie: name1=value1 [; name2=value]
+```
+
+2. \(서버\) Version 0 Set-Cookie 헤더
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC18D;&#xC131;</th>
+      <th style="text-align:left">&#xD544;&#xC218;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">&#xC774;&#xB984;=&#xAC12;</td>
+      <td style="text-align:left">&#xD544;</td>
+      <td style="text-align:left">
+        <p>&#xC138;&#xBBF8;&#xCF5C;&#xB860;, &#xC27C;&#xD45C;, &#xB4F1;&#xD638;,
+          &#xACF5;&#xBC31;&#xC740; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC5C6;&#xB2E4;
+          (&#xB2E8;, &#xD070;&#xB530;&#xC634;&#xD45C;&#xB85C; &#xAC10;&#xC2F8;&#xBA74;
+          &#xAC00;&#xB2A5;)</p>
+        <p>ex. Set-Cookie: user=Woobin</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Expires</td>
+      <td style="text-align:left">&#xC120;&#xD0DD;</td>
+      <td style="text-align:left">
+        <p>&#xCFE0;&#xD0A4; &#xB9CC;&#xB8CC; &#xC2DC;&#xAC01; (GMT &#xD0C0;&#xC784;&#xC874;&#xB9CC;
+          &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;)</p>
+        <p>ex. Set-Cookie: user=Woobin; expires=Wednesday, 09-Feb-20 23:12:40 GMT</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Domain</td>
+      <td style="text-align:left">&#xC120;&#xD0DD;</td>
+      <td style="text-align:left">
+        <p>&#xC11C;&#xBC84;&#xAC00; &#xD2B9;&#xC815; &#xB3C4;&#xBA54;&#xC778;&#xC5D0;&#xB9CC;
+          &#xCFE0;&#xD0A4;&#xB97C; &#xC81C;&#xD55C;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xAC8C;
+          &#xD55C;&#xB2E4;.</p>
+        <p>&#xB450; &#xAC1C;&#xC5D0;&#xC11C; &#xC138; &#xAC1C; &#xC601;&#xC5ED;&#xC744;
+          &#xAC00;&#xC9C0;&#xB294; &#xB3C4;&#xBA54;&#xC778;&#xC744; &#xAE30;&#xC220;&#xD574;&#xC57C;
+          &#xD55C;&#xB2E4;. (.com, .edu &#xAC19;&#xC740; &#xAC83;&#xB9CC;&#xC73C;&#xB85C;&#xB294;
+          &#xC548;&#xB428;)</p>
+        <p>Set-Coookie: user=Woobin; domain=&quot;google.com&quot;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Path</td>
+      <td style="text-align:left">&#xC120;&#xD0DD;</td>
+      <td style="text-align:left">
+        <p>&#xC11C;&#xBC84;&#xC5D0; &#xC788;&#xB294; &#xD2B9;&#xC815; &#xBB38;&#xC11C;&#xC5D0;&#xB9CC;
+          &#xCFE0;&#xD0A4;&#xB97C; &#xD560;&#xB2F9;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+        <p>Set-Cookie: user=Woobin; path=/orders</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Secure</td>
+      <td style="text-align:left">&#xC120;&#xD0DD;</td>
+      <td style="text-align:left">
+        <p>&#xC774; &#xC18D;&#xC131;&#xC774; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74;
+          SSL &#xBCF4;&#xC548; &#xC5F0;&#xACB0;&#xC744; &#xC0AC;&#xC6A9;&#xD560;
+          &#xB54C;&#xB9CC; &#xCFE0;&#xD0A4;&#xB97C; &#xC804;&#xC1A1;&#xD55C;&#xB2E4;.</p>
+        <p>Set-Cookie: user=Woobin; secure</p>
+      </td>
+    </tr>
+  </tbody>
+</table>3. \(클라이언트\) Version 0 Cookie 헤더
+
+클라이언트는 위의 필터들이 현재 요청하려고 하는 사이트에 들어맞으면서 아직 파기되지 않은 쿠키들을 함께 보낸다. Cookie 헤더에 한데 이어 붙여 보낸다.
+
+#### 11.6.7 Version 1 \(RFC 2965\) 쿠키
+
+**Version 0 쿠키와의 차이점**
+
+* 쿠키마다 목적을 설명하는 설명문이 있다.
+* 만료 주기와 상관없이 브라우저가 닫힐 때 쿠키를 삭제할 수 있다.
+* 절대 날짜\(Expires\) 대신 초 단위의 상대 값\(Max-age\)으로 쿠키의 생명주기를 결정한다.
+* 포트 번호로도 쿠키를 제어한다.
+* 버전 번호가 추가되었다.
+* Cookie 헤더에 $ 접두어가 있다.
+
+1. \(서버\) Version 1 Set-Cookie2 헤더
+
+| 속 | 필수 | 설 |
+| :--- | :--- | :--- |
+| 이름=값 | 필수 | 예약어 $로 시작해서는 안된다. |
+| Version | 필수 | 쿠키 명세 버전 정수 값 ex. Version="1" |
+| Comment | 선택 | 쿠키를 사용하려는 의도. UTF-8로 인코딩되어야 함. |
+| CommentURL | 선택 | 쿠키의 목적과 정책이 담긴 URL 링크 |
+| Discard | 선택 | 이 속성이 있으면 클라이언트는 프로그램이 종료될 때 쿠키를 삭제함 |
+| Domain | 선택 | Version 0 참 |
+| Max-age | 선택 | 쿠키의 유효기간을 초 단위의 정수 값으로 표 |
+| Path | 선택 | Version 0 참 |
+| Port | 선택 | 쿠키가 적용될 포트 번 |
+| Secure | 선택 | Version 0 참 |
+
+2. Version 1 Cookie 헤
+
+* Set-Cookie2 필터 중에서 현재의 웹 사이트에 들어맞는 들어맞는 필터 정보에 달러 문자\($\)를 붙여서 전송한다.
+* 클라이언트가 Cookie2 헤더를 보내고, 서버가 이를 인식할 수 있으면, 서버는 Set-Cookie2 헤더를 보내야 한다.
+* 클라이언트가 같은 쿠키를 Set-Cookie와 Set-Cookie2에서 모두 받으면 Set-Cookie는 무시한다.
+* 클라이언트가 Version 0 Version 1을 모두 지원하더라도, 서버가 Set-Cookie를 보내면 클라이언트는 Cookie 헤더를 보내야 한다. 단 Cookie2: $Version="1"을 같이 보내 업그레이드할 수 있음을 알린다.
+
+#### 11.6.8 쿠키와 세션 추적
+
+세션 쿠키를 사용해 사용자의 연속적인 트랜잭션을 추적한다. \(아래의 그림에서는 뚱뚱한 URL도 함께 사용한다.\)
+
+![](../../.gitbook/assets/2020-01-05-5.43.49.png)
+
+#### 11.6.9 쿠키와 캐싱
+
+쿠키와 관련된 문서를 캐싱하면 사용자의 쿠키가 다른 사용자에게 할당되거나, 개인 정보가 노출될 수 있다.
+
+* Set-Cookie 빼고 캐시를 해도 된다면, 명시적으로 Cache-Control: no-cache="Set-Cookie"를 표시한다.
+* 캐시를 해도 되는 문서에는 Cache-Control: public을 사용한다.
+* \(서버의 응답에\) 어떤 캐시는 Set-Cookie 헤더를 제거한다.
+  * 캐시가 모든 요청마다 원 서버에 재검사하도록 만들 수 있다.
+  * 재검사를 위해 Cache-Control: must-revalidate, max-age=0을 추가한다.
+* 더 보수적인 캐시는 Set-Cookie를 가지고 있는 응답은 아예 캐싱하지 않는다.
+* \(클라이언트의 요청에서\) 보수적인 캐시는 Cookie 헤더가 있는 요청에 대한 응답은 캐시하지 않는다.
+  * 이미지는 캐싱하고 텍스트는 캐싱하지 않을 수도 있다.
+  * 이미지에 Max-age가 0인 Cookie 헤더를 설정해 매번 재검사하게 만들 수 있다.
+
+#### 11.6.10 쿠키, 보안, 그리고 개인정보
+
+쿠키 자체가 보안상으로 엄청 위험한 건 아니다.
+
+> tl; dr [CIAC I-034 인터넷 쿠](https://packetstormsecurity.com/files/19214/ciac.i-034.internet.cookies.html): 쿠키의 위험성이 과대평가되었다는 평가서
+
+* 원격 DB에 정보를 저장하고 데이터의 키 값을 쿠키에 저장하는 방식을 표준으로 사용하면 데이터가 서버와 클라 사이에 직접 오가지 않는다.
+* 다만 광고 웹 사이트가 사용자를 추적하기 위해 지속 쿠키를 사용하는 것과 같은 오용은 조심하자.
 
