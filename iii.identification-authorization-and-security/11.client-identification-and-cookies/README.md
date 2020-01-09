@@ -190,7 +190,11 @@
 
 크롬은 Cookies라는 SQLite 파일에 쿠키를 저장한다.
 
-> 우빈: 구글 크롬 쿠키를 직접 확인해 봅시다! \[개발자 도구\(F12\)\] - \[Application\] - \[Storage\] - \[Cookie\]. 책에 있는 필드 설명은 좀 오래 되었습니다. [공식 문서](https://developers.google.com/web/tools/chrome-devtools/storage/cookies#fields)에서 확인해 보세요. \[TODO\] 필드 설명
+> 우빈: 구글 크롬 쿠키를 직접 확인해 봅시다! \[개발자 도구\(F12\)\] - \[Application\] - \[Storage\] - \[Cookie\].
+
+> 책에 있는 필드 설명은 좀 오래 되었습니다. [공식 문서](https://developers.google.com/web/tools/chrome-devtools/storage/cookies#fields)에서 확인해 보세요.
+
+> [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00): SameSite \(experimental\) 같은 사이트에서 왔을 때와 아닐 때 어떻게 쿠키 처리를 할지 알려줌. \([SameSite cookies explained](https://web.dev/samesite-cookies-explained/)\)
 
 #### 마이크로소프트 인터넷 익스플로러 쿠키
 
