@@ -17,14 +17,14 @@
 
 ![](../../.gitbook/assets/basic-auth_1.png)
 > 네 가지 인증 단계
-	* 요청
-	* 인증 요구
-		* Basic : 기본 인증 스킴으로 ID/PW 를 base64 encoding 하여 전달
-		* realm : 인증을 요구하는 공간이나 범위에 대한 설명
-	* 인증
-		* WWW-Authenticate 헤더에 정의된 스킴에 맞춰 Authorization 헤더에 ID/PW 쌍을 기술하여 전송
-	* Authentication-info
-		* 추가적인 인증 알고리즘에 대한 정보를 기술
+* 요청
+* 인증 요구
+	* Basic : 기본 인증 스킴으로 ID/PW 를 base64 encoding 하여 전달
+	* realm : 인증을 요구하는 공간이나 범위에 대한 설명
+* 인증
+	* WWW-Authenticate 헤더에 정의된 스킴에 맞춰 Authorization 헤더에 ID/PW 쌍을 기술하여 전송
+* Authentication-info
+	* 추가적인 인증 알고리즘에 대한 정보를 기술
 
 ### 12.1.3 보안 영역
 * HTTP가 각 리소스마다 다른 접근 조건을 다루는 방법
