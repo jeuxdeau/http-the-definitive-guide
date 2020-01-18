@@ -44,7 +44,9 @@
 	* binary data 를 6bits 단위로 끊어 공통의 ASCII 문자로 변환
 > 왜 base64 인코딩을 하지?
 > base64 인코딩은 6bits 를 하나의 character 로 변환하기 때문에 2bits 의 overhead 가 발생하며, encode-decode 과정에서 추가적인 cpu 연산까지 발생하는데 왜 base64 encoding 을 해서 전송하는 것일까?
+
 > ASCII 는 7bits encoding 방식을 사용하기 때문에 남은 1bit 의 처리가 시스템별로 다르게 구현되어 있을 수 있다. 또한 일부 제어문자의 경우 시스템별로 다른 코드값을 가진다
+
 > 따라서 공통 ASCII 코드문자로만 이루어진 데이터를 전송하여 예상치 못한 호환 문제를 방지하고, 추가적으로 HTTP 헤더에서 사용할 수 없는 문자를 포함한 문자열을 처리하기 위해 base64 encoding 을 사용하는 것
 
 ### 12.2.3 프락시 인증
