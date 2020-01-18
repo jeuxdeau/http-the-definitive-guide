@@ -46,4 +46,7 @@
 * [11. 클라이언트 식별과 쿠키](iii.identification-authorization-and-security/11.client-identification-and-cookies/README.md)
   * [Questions](iii.identification-authorization-and-security/11.client-identification-and-cookies/11.client-identification-and-cookies-questions.md)
   * [Answers](iii.identification-authorization-and-security/11.client-identification-and-cookies/11.client-identification-and-cookies-answers.md)
+* [12. 기본 인증](iii.identification-authorization-and-security/12.basic-authorization/README.md)
+  * [Questions](iii.identification-authorization-and-security/12.basic-authorization/12.basic-authorization-questions.md)
+  * [Answers](iii.identification-authorization-and-security/12.basic-authorization/12.basic-authorization-answers.md)
 
