@@ -37,4 +37,6 @@
   * [질문과 답변](iii.identification-authorization-and-security/11.client-identification-and-cookies/11.client-identification-and-cookies-qna.md)
 * [12. 기본 인증](iii.identification-authorization-and-security/12.basic-authorization/README.md)
   * [질문과 답변](iii.identification-authorization-and-security/12.basic-authorization/12.basic-authorization-qna.md)
+* [13. 다이제스트 인증](iii.identification-authorization-and-security/13.digest-authentication/README.md)
+  * [질문과 답변](iii.identification-authorization-and-security/13.digest-authentication/13.digest-authentication-qna.md)
 
