@@ -39,4 +39,6 @@
   * [질문과 답변](iii.identification-authorization-and-security/12.basic-authorization/12.basic-authorization-qna.md)
 * [13. 다이제스트 인증](iii.identification-authorization-and-security/13.digest-authentication/README.md)
   * [질문과 답변](iii.identification-authorization-and-security/13.digest-authentication/13.digest-authentication-qna.md)
+* [14. 보안 HTTP](iii.identification-authorization-and-security/14.secure-http/README.md)
+  * [질문과 답변](iii.identification-authorization-and-security/14.secure-http/14.secure-http-qna.md)
 
