@@ -42,3 +42,8 @@
 * [14. 보안 HTTP](iii.identification-authorization-and-security/14.secure-http/README.md)
   * [질문과 답변](iii.identification-authorization-and-security/14.secure-http/14.secure-http-qna.md)
 
+## IV. 엔터티, 인코딩, 국제화
+
+* [15. 엔터티와 인코딩](iv./15.entities-and-encodings/README.md)
+  * [질문과 답변](iv./15.entities-and-encodings/15.entities-and-encodings-qna.md)
+
