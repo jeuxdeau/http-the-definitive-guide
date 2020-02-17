@@ -1,6 +1,6 @@
 # 교재 정오표
 
-## 2. URL과 리소스 
+## 2. URL과 리소스
 
 28p. \(번역 오류\)
 
@@ -15,6 +15,4 @@
 ## 3. HTTP 메시지
 
 78p. 표 3-11: trailer chunked transfer → trailer
-
-
 
