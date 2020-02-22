@@ -3,7 +3,8 @@
 ## 16.1 국제적인 콘텐츠를 다루기 위해 필요한 HTTP 지원
 * HTTP 메세지는 어떤 콘텐츠든 담을 수 있다
 	* HTTP의 엔터티 본문은 그저 비트 덩어리이다
-  ![internationalization_1.png](../../.gitbook/assets/internationalization_1.png)
+	
+  ![internationalization_1.png](../.gitbook/assets/internationalization_1.png)
   
 * 비트 덩어리를 콘텐츠로 만들기 위한 트랜스코딩 정보를 제공하는 방법
 	* 서버에서 클라이언트로 전달
@@ -26,8 +27,8 @@
 * 국제화된 문자 시스템은 문자의 의미와 표현을 분리한다
 	* HTTP는 문자 데이터의 전송에만 집중할 수 있음
 	* 글자의 표현, 출력은 사용자의 그래픽 디스플레이 소프트웨어의 역할
- 
- ![internationalization_2.png](../../.gitbook/assets/internationalization_2.png)
+
+![internationalization_2.png](../.gitbook/assets/internationalization_2.png)
 
   
 ### 16.2.3 잘못된 차셋은 잘못된 글자들을 닣는다
@@ -43,7 +44,8 @@
 * charset 이 명시되어있지 않다면 문서의 콘텐츠로부터 charset을 추측한다
 	* HTML 의 <META HTTP-EQUIV="Content-Type"> 태그에 charset 을 서술
 * 문자 인코딩을 추측하지 못했다면 iso-8859-1 로 가정한다
-![internationalization_3.png](../../.gitbook/assets/internationalization_3.png)
+
+![internationalization_3.png](../.gitbook/assets/internationalization_3.png)
 
 ### 16.2.6 Accpet-Charset 헤더
 * 클라이언트가 지원할 수 있는 문자 트랜스코딩 알고리즘을 명시
@@ -100,7 +102,8 @@
 	* 첫 번째 서브태그는 메인 서브태그로 표준화되어 있음
 	* 두 번째 서브태그는 선택적이며 자신만의 이름 표준을 가짐
 	* 세 번째 서브태그부터는 자유양식
-![internationalization_4.png](../../.gitbook/assets/internationalization_4.png)
+
+![internationalization_4.png](../.gitbook/assets/internationalization_4.png)
 
 ### 16.4.5 대소문자의 구분 및 표현
 * 언어 태그는 대소문자를 구별하지 않음
