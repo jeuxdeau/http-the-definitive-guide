@@ -44,6 +44,6 @@
 
 ## IV. 엔터티, 인코딩, 국제화
 
-* [15. 엔터티와 인코딩](iv./15.entities-and-encodings/README.md)
-  * [질문과 답변](iv./15.entities-and-encodings/15.entities-and-encodings-qna.md)
-
+* [15. 엔터티와 인코딩](iv.entities-encodings-and-internationalization/15.entities-and-encodings/README.md)
+  * [질문과 답변](iv.entities-encodings-and-internationalization/15.entities-and-encodings/15.entities-and-encodings-qna.md)
+* [16. 국제화](iv.entities-encodings-and-internationalization/16.internationalization/README.md)
