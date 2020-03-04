@@ -4,7 +4,7 @@
 
 ### 주요 엔터티 헤더 필드
 
-| 헤더 | 설명  |
+| 헤더 | 설명 |
 | :--- | :--- |
 | Content-Type | 객체의 종류 |
 | Content-Length | 메시지 길이 |
@@ -19,10 +19,10 @@
 
 ### 엔터티 헤더로는 정의되어 있지 않으나, 중요한 것들
 
-| 헤더  | 설명  |
+| 헤더 | 설명 |
 | :--- | :--- |
 | Etag | 인스턴스에 대한 고유 식별 |
-| Cache-Control | 캐시되는 방법  |
+| Cache-Control | 캐시되는 방법 |
 
 ### 15.1.1 엔터티 본문
 
@@ -112,7 +112,7 @@ charset: 텍스트 파일에 대한 인코딩 \(ex. charset=utf-8\)
 
 gzip이 일반적으로 쓰인다. 확장 인코딩을 추가할 수 있다.
 
-![&#xCF58;&#xD150;&#xCE20; &#xC778;&#xCF54;&#xB529; &#xD1A0;&#xD070;&#xB4E4;](../../.gitbook/assets/2020-02-17-6.46.47.png)
+![&#xCF58;&#xD150;&#xCE20; &#xC778;&#xCF54;&#xB529; &#xD1A0;&#xD070;&#xB4E4;](https://github.com/jeuxdeau/http-the-definitive-guide/tree/41059d959f72b398b8847d1ce09ffb6357d49e50/.gitbook/assets/2020-02-17-6.46.47.png)
 
 ### 15.5.3 Accept-Encoding 헤더
 
@@ -202,13 +202,13 @@ Content-MD5 등 트레일러를 보낼 수 있다. Trailer 헤더가 포함되�
 1. Expires: 정확한 날짜. 클라이언트와 서버의 시계가 동기화되어 있어야 해서 어려움.
 2. Cache-Control: 상대시간을 이용. 서버가 떠난 후로부터의 시간을 초단위로 정한다. 시계 동기화에 의존하지 않아서 더 정확하다.
 
-> ref. [7.9 캐시 제어](../../ii.http-architecture/07.caching/#7-9) 참고
+> ref. [7.9 캐시 제어](https://github.com/jeuxdeau/http-the-definitive-guide/tree/41059d959f72b398b8847d1ce09ffb6357d49e50/ii.http-architecture/07.caching#7-9) 참고
 
 ### 15.8.2 조건부 요청과 검사기
 
 리소스가 바뀐 경우에만 사본을 요청한다. 'If-'로 시작하는 조건부 헤더에 의해 구현된다.
 
-![&#xC870;&#xAC74;&#xBD80; &#xC694;&#xCCAD; &#xC720;&#xD615;](../../.gitbook/assets/2020-02-17-6.56.36.png)
+![&#xC870;&#xAC74;&#xBD80; &#xC694;&#xCCAD; &#xC720;&#xD615;](https://github.com/jeuxdeau/http-the-definitive-guide/tree/41059d959f72b398b8847d1ce09ffb6357d49e50/.gitbook/assets/2020-02-17-6.56.36.png)
 
 * 약한 검사기: 인스턴스가 고유하게 식별되지 않는 검사기 \(ex. 바이트 단위의 크기, 최종 변경 시각\)
 * 강한 검사기: 인스턴스를 고유하게 식별하는 검사기 \(ex. MD5 체크섬, ETag\)
@@ -220,7 +220,7 @@ cf. 때로는 검사기를 통과하지 못한 버전을 채택하기도 한다.
 `Range` 헤더를 이용해 문서의 일부분이나 특정 범위만 요청한다.
 
 1. 처음 몇 바이트만 받고 실패했을 경우
-2. 2. 여러 범위로 요청을 하고 싶은 경우 \(ex. P2P\)
+2. 1. 여러 범위로 요청을 하고 싶은 경우 \(ex. P2P\)
 
 =&gt; 응답은 `Content-Type: multipart/byteranges` 헤더와 함께 하나의 엔터티로 돌아온다.
 
@@ -235,7 +235,7 @@ cf. 때로는 검사기를 통과하지 못한 버전을 채택하기도 한다.
 3. 서버는 델타를 클라이언트에 보내주고, 최신 버전에 대한 새 식별자를 명시한다.
 4. \(클라이언트의\) `A-IM` 헤더: 자신이 델타 응답을 받아들일 수 있음을 알림
 
-![&#xB378;&#xD0C0; &#xC778;&#xCF54;&#xB529; &#xAD00;&#xB828; &#xD5E4;&#xB354;&#xB4E4;](../../.gitbook/assets/2020-02-17-6.58.49.png)
+![&#xB378;&#xD0C0; &#xC778;&#xCF54;&#xB529; &#xAD00;&#xB828; &#xD5E4;&#xB354;&#xB4E4;](https://github.com/jeuxdeau/http-the-definitive-guide/tree/41059d959f72b398b8847d1ce09ffb6357d49e50/.gitbook/assets/2020-02-17-6.58.49.png)
 
 ### 15.10.1 인스턴스 조작, 델타 생성기, 델타 적용기
 
