@@ -48,6 +48,6 @@
   * [질문과 답변](iv./15.entities-and-encodings/15.entities-and-encodings-qna.md)
 * [16. 국제화](iv./16.internationalization/README.md)
   * [질문과 답변](iv./16.internationalization/16.internationalization-qna.md)
-* [17. 내용 협상과 트랜스코딩](iv./17.content-negotiation-and-transcoding.md)
-* [질문과 답변](undefined.md)
+* [17. 내용 협상과 트랜스코딩](iv./17.content-negotiation-and-transcoding/README.md)
+  * [질문과 답변](iv./17.content-negotiation-and-transcoding/17.content-negotiation-and-transcoding-qna.md)
 
