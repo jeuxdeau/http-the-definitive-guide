@@ -53,5 +53,6 @@
 
 ## V. 콘텐츠 발행 및 배포
 
-* [18. 웹 호스팅](v.publishing-and-disseminating-web-content/18.web-hosting/README.md)
+* [18. 웹 호스팅](v.content-publishing-and-distribution
+/18.web-hosting/README.md)
   * [질문과 답변](v.publishing-and-disseminating-web-content/18.web-hosting/18.web-hosting-qna.md)
