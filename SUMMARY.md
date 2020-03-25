@@ -58,3 +58,6 @@
 - [19. 배포 시스템](v.content-publishing-and-distribution/19.publishing-systems/README.md)
   - [질문과 답변](v.content-publishing-and-distribution/19.publishing-systems/19.publishing-systems-qna.md)
 - [20. 리다이렉션과 부하 균형](v.content-publishing-and-distribution/20.redirection-and-load-balancing/README.md)
+  - [질문과 답변](v.content-publishing-and-distribution/20.redirection-and-load-balancing/20.redirection-and-load-balancing-qna.md)
+- [21. 로깅과 사용 추적](v.content-publishing-and-distribution/21.logging-and-usage-tracking/README.md)
+  - [질문과 답변](v.content-publishing-and-distribution/21.logging-and-usage-tracking/21.logging-and-usage-tracking-qna.md)
