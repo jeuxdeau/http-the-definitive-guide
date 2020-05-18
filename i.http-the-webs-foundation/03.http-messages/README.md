@@ -253,37 +253,24 @@
 
 ### 3.4.2 200-299: 성공 상태 코드
 
+| 상태 코드 | 사유 구절 | 의미 |
+| :--- | :--- | :--- |
+
+
+| 200 | OK | 요청 정상, 엔티티 본문에 요청 리소스 포함 |
+| :--- | :--- | :--- |
+
+
+| 201 | Created | 생성 요청\(ex.PUT\)에 대해 리소스를 생성함 헤더에는 생성된 리소스의 구체적인 참조\(Location 헤더\) 포함 엔티티 본문에는 리소스를 참조할 수 있는 여러 URL 포함 |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xC0C1;&#xD0DC; &#xCF54;&#xB4DC;</th>
-      <th style="text-align:left">&#xC0AC;&#xC720; &#xAD6C;&#xC808;</th>
-      <th style="text-align:left">&#xC758;&#xBBF8;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">200</td>
-      <td style="text-align:left">OK</td>
-      <td style="text-align:left">&#xC694;&#xCCAD; &#xC815;&#xC0C1;, &#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0;
-        &#xC694;&#xCCAD; &#xB9AC;&#xC18C;&#xC2A4; &#xD3EC;&#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">201</td>
-      <td style="text-align:left">Created</td>
-      <td style="text-align:left">&#xC0DD;&#xC131; &#xC694;&#xCCAD;(ex.PUT)&#xC5D0; &#xB300;&#xD574; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
-        &#xC0DD;&#xC131;&#xD568;
-        <br />&#xD5E4;&#xB354;&#xC5D0;&#xB294; &#xC0DD;&#xC131;&#xB41C; &#xB9AC;&#xC18C;&#xC2A4;&#xC758;
-        &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xCC38;&#xC870;(Location &#xD5E4;&#xB354;)
-        &#xD3EC;&#xD568;
-        <br />&#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0;&#xB294; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
-        &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5EC;&#xB7EC; URL
-        &#xD3EC;&#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">202</td>
-      <td style="text-align:left">Accepted</td>
-      <td style="text-align:left">
+      <th style="text-align:left">202</th>
+      <th style="text-align:left">Accepted</th>
+      <th style="text-align:left">
         <p>&#xC694;&#xCCAD;&#xC740; &#xC815;&#xC0C1;&#xC774;&#xB098; &#xC11C;&#xBC84;&#xB294;
           &#xC5B4;&#xB5A4; &#xB3D9;&#xC791;&#xB3C4; &#xC218;&#xD589;&#xD558;&#xC9C0;
           &#xC54A;&#xC74C;</p>
@@ -295,49 +282,25 @@
           &#xB300;&#xD55C; &#xC0C1;&#xD0DC;&#xC640; &#xAC00;&#xAE09;&#xC801;&#xC774;&#xBA74;
           &#xC5B8;&#xC81C; &#xC644;&#xB8CC;&#xB420; &#xC218; &#xC788;&#xB294;&#xC9C0;&#xC5D0;
           &#xB300;&#xD55C; &#xCD94;&#xC815; &#xD3EC;&#xD568;&#xD574;&#xC57C; &#xD568;</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">203</td>
-      <td style="text-align:left">Non-Authoritative Information</td>
-      <td style="text-align:left">&#xC5D4;&#xD2F0;&#xD2F0; &#xD5E4;&#xB354;&#xC5D0; &#xB4E4;&#xC5B4;&#xC788;&#xB294;
-        &#xC815;&#xBCF4;&#xAC00; &#xC6D0;&#xB798; &#xC11C;&#xBC84;&#xAC00; &#xC544;&#xB2CC;
-        &#xC911;&#xAC1C;&#xC790;&#xC758; &#xB9AC;&#xC18C;&#xC2A4; &#xC0AC;&#xBCF8;&#xC5D0;&#xC11C;
-        &#xC634;
-        <br />&#xC911;&#xAC1C;&#xC790;&#xB85C;&#xBD80; &#xB9AC;&#xC18C;&#xC2A4; &#xC0AC;&#xBCF8;&#xC744;
-        &#xBC1B;&#xC558;&#xC9C0;&#xB9CC;, &#xB9AC;&#xC18C;&#xC2A4; &#xD5E4;&#xB354;&#xAC00;
-        &#xC11C;&#xBC84;&#xC640; &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xB294;
-        &#xACBD;&#xC6B0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">204</td>
-      <td style="text-align:left">No Content</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38;&#xC73C;&#xB85C; &#xBCF4;&#xB0B4;&#xC904; &#xAC83;&#xC740;
-        &#xC5C6;&#xC9C0;&#xB9CC;, &#xD5E4;&#xB354;&#xC640; &#xC0C1;&#xD0DC;&#xC904;&#xC774;
-        &#xC758;&#xBBF8; &#xC788;&#xB294; &#xACBD;&#xC6B0;
-        <br />&#xC6F9;&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xB97C; &#xC0C8; &#xBB38;&#xC11C;&#xB85C;
-        &#xC774;&#xB3D9;&#xC2DC;&#xD0A4;&#xC9C0; &#xC54A;&#xACE0; &#xAC31;&#xC2E0;
-        (ex. &#xD3FC; &#xB9AC;&#xD504;&#xB808;&#xC2DC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">205</td>
-      <td style="text-align:left">Reset Conent</td>
-      <td style="text-align:left">&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xAC8C; &#xD604;&#xC7AC; &#xD398;&#xC774;&#xC9C0;&#xC5D0;
-        &#xC788;&#xB294; &#xBAA8;&#xB4E0; HTML &#xD3FC; &#xAC12;&#xC744; &#xBE44;&#xC6B0;&#xB77C;&#xACE0;
-        &#xB9D0;&#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">206</td>
-      <td style="text-align:left">Partial Content</td>
-      <td style="text-align:left">&#xBD80;&#xBD84; &#xD639;&#xC740; &#xBC94;&#xC704; &#xC694;&#xCCAD;&#xC774;
-        &#xC131;&#xACF5;
-        <br />Content-Range, Date &#xD5E4;&#xB354;&#xB97C; &#xBC18;&#xB4DC;&#xC2DC;
-        &#xD3EC;&#xD568;
-        <br />Etag/Content-Location &#xD5E4;&#xB354; &#xC911; &#xD558;&#xB098;&#xB3C4;
-        &#xBC18;&#xB4DC;&#xC2DC; &#xD3EC;&#xD568;</td>
-    </tr>
-  </tbody>
-</table>> cf. [ETag](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag)
+  </thead>
+  <tbody></tbody>
+</table>| 203 | Non-Authoritative Information | 엔티티 헤더에 들어있는 정보가 원래 서버가 아닌 중개자의 리소스 사본에서 옴 중개자로부 리소스 사본을 받았지만, 리소스 헤더가 서버와 일치하지 않는 경우 |
+| :--- | :--- | :--- |
+
+
+| 204 | No Content | 본문으로 보내줄 것은 없지만, 헤더와 상태줄이 의미 있는 경우 웹브라우저를 새 문서로 이동시키지 않고 갱신 \(ex. 폼 리프레시\) |
+| :--- | :--- | :--- |
+
+
+| 205 | Reset Conent | 브라우저에게 현재 페이지에 있는 모든 HTML 폼 값을 비우라고 말함 |
+| :--- | :--- | :--- |
+
+
+| 206 | Partial Content | 부분 혹은 범위 요청이 성공 Content-Range, Date 헤더를 반드시 포함 Etag/Content-Location 헤더 중 하나도 반드시 포함 |
+| :--- | :--- | :--- |
+
 
 ### 3.4.3 300-399: 리다이렉션 상태 코드
 
@@ -365,79 +328,52 @@
 
 ### 3.4.4 400-499: 클라이언트 에러 상태 코드
 
+| 상태 코드 | 사유 구절 | 의미 |
+| :--- | :--- | :--- |
+
+
+| 400 | Bad Request | 클라이언트가 잘못된 요청을 보냄 |
+| :--- | :--- | :--- |
+
+
+| 401 | Unauthorized | 클라이언트에게 인증 요구 |
+| :--- | :--- | :--- |
+
+
+| 402 | Payment Required | \(현재 쓰이지 않음, 미래에 사용될 가능성\) |
+| :--- | :--- | :--- |
+
+
+| 403 | Forbidden | 요청이 서버에 의해 거부됨 엔티티 본문에 거부 이유를 설명할 수 있으나, 보통 거절의 이유를 숨기고 싶을 때 씀 |
+| :--- | :--- | :--- |
+
+
+| 404 | Not Found | 서버가 요청한 URL을 찾을 수 없음 |
+| :--- | :--- | :--- |
+
+
+| 405 | Method Not Allowed | 요청 URL에 대해 지하지 않는 메서드로 요청받음 |
+| :--- | :--- | :--- |
+
+
+| 406 | Not Acceptable | 주어진 URL에 대한 리소스 중 클라이언트가 요청한 규격에 맞는 것이 없음 |
+| :--- | :--- | :--- |
+
+
+| 407 | Proxy Authentication Required | 401과 같으나 프락시 서버를 위해 사용함 |
+| :--- | :--- | :--- |
+
+
+| 408 | Request Timeout | 클라이언트의 요청을 완수하기에 시간이 너무 많이 걸림 |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xC0C1;&#xD0DC; &#xCF54;&#xB4DC;</th>
-      <th style="text-align:left">&#xC0AC;&#xC720; &#xAD6C;&#xC808;</th>
-      <th style="text-align:left">&#xC758;&#xBBF8;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">400</td>
-      <td style="text-align:left">Bad Request</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC798;&#xBABB;&#xB41C;
-        &#xC694;&#xCCAD;&#xC744; &#xBCF4;&#xB0C4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">401</td>
-      <td style="text-align:left">Unauthorized</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xAC8C; &#xC778;&#xC99D;
-        &#xC694;&#xAD6C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">402</td>
-      <td style="text-align:left">Payment Required</td>
-      <td style="text-align:left">(&#xD604;&#xC7AC; &#xC4F0;&#xC774;&#xC9C0; &#xC54A;&#xC74C;, &#xBBF8;&#xB798;&#xC5D0;
-        &#xC0AC;&#xC6A9;&#xB420; &#xAC00;&#xB2A5;&#xC131;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">403</td>
-      <td style="text-align:left">Forbidden</td>
-      <td style="text-align:left">&#xC694;&#xCCAD;&#xC774; &#xC11C;&#xBC84;&#xC5D0; &#xC758;&#xD574; &#xAC70;&#xBD80;&#xB428;
-        <br
-        />&#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;&#xC5D0; &#xAC70;&#xBD80; &#xC774;&#xC720;&#xB97C;
-        &#xC124;&#xBA85;&#xD560; &#xC218; &#xC788;&#xC73C;&#xB098;, &#xBCF4;&#xD1B5;
-        &#xAC70;&#xC808;&#xC758; &#xC774;&#xC720;&#xB97C; &#xC228;&#xAE30;&#xACE0;
-        &#xC2F6;&#xC744; &#xB54C; &#xC500;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">404</td>
-      <td style="text-align:left">Not Found</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xC694;&#xCCAD;&#xD55C; URL&#xC744; &#xCC3E;&#xC744;
-        &#xC218; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">405</td>
-      <td style="text-align:left">Method Not Allowed</td>
-      <td style="text-align:left">&#xC694;&#xCCAD; URL&#xC5D0; &#xB300;&#xD574; &#xC9C0;&#xD558;&#xC9C0;
-        &#xC54A;&#xB294; &#xBA54;&#xC11C;&#xB4DC;&#xB85C; &#xC694;&#xCCAD;&#xBC1B;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">406</td>
-      <td style="text-align:left">Not Acceptable</td>
-      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; URL&#xC5D0; &#xB300;&#xD55C; &#xB9AC;&#xC18C;&#xC2A4;
-        &#xC911; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC694;&#xCCAD;&#xD55C;
-        &#xADDC;&#xACA9;&#xC5D0; &#xB9DE;&#xB294; &#xAC83;&#xC774; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">407</td>
-      <td style="text-align:left">Proxy Authentication Required</td>
-      <td style="text-align:left">401&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC; &#xC11C;&#xBC84;&#xB97C;
-        &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">408</td>
-      <td style="text-align:left">Request Timeout</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xC694;&#xCCAD;&#xC744;
-        &#xC644;&#xC218;&#xD558;&#xAE30;&#xC5D0; &#xC2DC;&#xAC04;&#xC774; &#xB108;&#xBB34;
-        &#xB9CE;&#xC774; &#xAC78;&#xB9BC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">409</td>
-      <td style="text-align:left">Conflict</td>
-      <td style="text-align:left">
+      <th style="text-align:left">409</th>
+      <th style="text-align:left">Conflict</th>
+      <th style="text-align:left">
         <p>&#xC694;&#xCCAD;&#xC774; &#xCDA9;&#xB3CC;&#xC744; &#xC77C;&#xC73C;&#xD0AC;
           &#xC5FC;&#xB824;&#xAC00; &#xC788;&#xC74C;
           <br />&#xBCF8;&#xBB38;&#xC5D0; &#xCDA9;&#xB3CC;&#xC5D0; &#xB300;&#xD574; &#xC124;&#xBA85;&#xD574;&#xC57C;
@@ -445,60 +381,41 @@
         <p>ex. &#xC11C;&#xBC84;&#xC5D0; &#xC788;&#xB294; &#xD30C;&#xC77C;&#xBCF4;&#xB2E4;
           &#xC624;&#xB798;&#xB41C; &#xD30C;&#xC77C;&#xC744; PU&#xC73C;&#xB85C; &#xC5C5;&#xB85C;&#xB4DC;&#xD560;
           &#xB54C; &#xBC84;&#xC804; &#xC81C;&#xC5B4; &#xCDA9;&#xB3CC;&#xC774; &#xBC1C;&#xC0DD;</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">410</td>
-      <td style="text-align:left">Gone</td>
-      <td style="text-align:left">404&#xC640; &#xBE44;&#xC2B7;&#xD558;&#xB098; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C;
-        &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5C8;&#xB2E4; &#xC81C;&#xAC70;&#xB41C;
-        &#xACBD;&#xC6B0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">411</td>
-      <td style="text-align:left">Length Required</td>
-      <td style="text-align:left">&#xC694;&#xCCAD;&#xC5D0; Content-Length &#xD5E4;&#xB354; &#xC694;&#xAD6C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">412</td>
-      <td style="text-align:left">Precondition Failed</td>
-      <td style="text-align:left">&#xC870;&#xAC74;&#xBD80; &#xC694;&#xCCAD; &#xC911; &#xD558;&#xB098;&#xAC00;
-        &#xC2E4;&#xD328;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">413</td>
-      <td style="text-align:left">Request Entity Too Large</td>
-      <td style="text-align:left">&#xC694;&#xCCAD;&#xC758; &#xD06C;&#xAE30;&#xAC00; &#xC11C;&#xBC84;&#xAC00;
-        &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;(or &#xCC98;&#xB9AC;&#xD558;&#xACE0;&#xC790;
-        &#xD558;&#xB294;) &#xD55C;&#xACC4;&#xB97C; &#xB118;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">414</td>
-      <td style="text-align:left">Request URI Too Long</td>
-      <td style="text-align:left">&#xC694;&#xCCAD; URL &#xAE38;&#xC774;&#xAC00; &#xC11C;&#xBC84;&#xAC00;
-        &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xB294;(or &#xCC98;&#xB9AC;&#xD558;&#xACE0;&#xC790;
-        &#xD558;&#xB294;) &#xD55C;&#xACC4;&#xB97C; &#xB118;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">415</td>
-      <td style="text-align:left">Unsupported Media Type</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294;
-        &#xC720;&#xD615;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xBCF8;&#xBB38;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">416</td>
-      <td style="text-align:left">Requested Range Not Satisfiable</td>
-      <td style="text-align:left">&#xC694;&#xCCAD;&#xD55C; &#xB9AC;&#xC18C;&#xC2A4;&#xC758; &#xBC94;&#xC704;&#xAC00;
-        &#xC798;&#xBABB;&#xB428;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">417</td>
-      <td style="text-align:left">Expectation Failed</td>
-      <td style="text-align:left">Expect &#xC694;&#xCCAD; &#xB354;&#xC5D0; &#xC788;&#xB294; &#xB0B4;&#xC6A9;&#xC744;
-        &#xC11C;&#xBC84;&#xAC00; &#xB9CC;&#xC871;&#xC2DC;&#xD0AC; &#xC218; &#xC5C6;&#xC74C;</td>
-    </tr>
-  </tbody>
-</table>### 3.4.5 500-599: 서버 에러 상태 코드
+  </thead>
+  <tbody></tbody>
+</table>| 410 | Gone | 404와 비슷하나 리소스를 가지고 있었다 제거된 경우 |
+| :--- | :--- | :--- |
+
+
+| 411 | Length Required | 요청에 Content-Length 헤더 요구 |
+| :--- | :--- | :--- |
+
+
+| 412 | Precondition Failed | 조건부 요청 중 하나가 실패 |
+| :--- | :--- | :--- |
+
+
+| 413 | Request Entity Too Large | 요청의 크기가 서버가 처리할 수 있는\(or 처리하고자 하는\) 한계를 넘음 |
+| :--- | :--- | :--- |
+
+
+| 414 | Request URI Too Long | 요청 URL 길이가 서버가 처리할 수 있는\(or 처리하고자 하는\) 한계를 넘음 |
+| :--- | :--- | :--- |
+
+
+| 415 | Unsupported Media Type | 서버가 지원하지 않는 유형의 엔티티 본문 |
+| :--- | :--- | :--- |
+
+
+| 416 | Requested Range Not Satisfiable | 요청한 리소스의 범위가 잘못됨 |
+| :--- | :--- | :--- |
+
+
+| 417 | Expectation Failed | Expect 요청 더에 있는 내용을 서버가 만족시킬 수 없음 |
+| :--- | :--- | :--- |
+
 
 * 클라이언트에서 올바른 요청을 보냈지만 서버에서 에러 발생
 
@@ -521,81 +438,67 @@
 * 클라이언트, 서버 모두 사용
 * 메시지에 대한 기본적 정보 제공
 
+| 헤더 | 설명 |
+| :--- | :--- |
+
+
+| Connection | 현재의 전송이 완료된 후 네트워크 접속을 유지할지 말지를 제어 |
+| :--- | :--- |
+
+
+| Date | 메시지가 만들어진 날짜와 시간 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Connection</td>
-      <td style="text-align:left">&#xD604;&#xC7AC;&#xC758; &#xC804;&#xC1A1;&#xC774; &#xC644;&#xB8CC;&#xB41C;
-        &#xD6C4; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC811;&#xC18D;&#xC744; &#xC720;&#xC9C0;&#xD560;&#xC9C0;
-        &#xB9D0;&#xC9C0;&#xB97C; &#xC81C;&#xC5B4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Date</td>
-      <td style="text-align:left">&#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC;&#xC640;
-        &#xC2DC;&#xAC04;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">MIME-Version</td>
-      <td style="text-align:left">
+      <th style="text-align:left">MIME-Version</th>
+      <th style="text-align:left">
         <p>MIME &#xBC84;&#xC804; (&#xD604;&#xC7AC; 1.0)</p>
         <p>&#xC2E4;&#xC9C8;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xD574;&#xB2F9; &#xBA54;&#xC2DC;&#xC9C0;&#xAC00;
           MIME &#xD615;&#xC2DD;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C4;</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">Trailer</td>
-      <td style="text-align:left">&#xC778;&#xCF54;&#xB529;&#xB41C; (chunked) &#xBA54;&#xC2DC;&#xC9C0;&#xC758;
-        &#xB05D; &#xBD80;&#xBD84;&#xC5D0; &#xCD94;&#xAC00; &#xD5E4;&#xB354;&#xB4E4;&#xC758;
-        &#xBAA9;&#xB85D;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Transfer-Encoding</td>
-      <td style="text-align:left">&#xC5B4;&#xB5A4; &#xC778;&#xCF54;&#xB529;&#xC774; &#xC801;&#xC6A9;&#xB418;&#xC5C8;&#xB294;&#xC9C0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Upgrade</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xAC00; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xD558;&#xAE38;
-        &#xC6D0;&#xD558;&#xB294; &#xC0C8; &#xBC84;&#xC804;&#xC774;&#xB098; &#xD504;&#xB85C;&#xD1A0;&#xCF5C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Via</td>
-      <td style="text-align:left">&#xD504;&#xB77D;&#xC2DC;, &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774; &#xB4F1;
-        &#xBA54;&#xC2DC;&#xC9C0;&#xAC00; &#xAC70;&#xCCD0;&#xC628; &#xC911;&#xAC1C;&#xC790;</td>
-    </tr>
-  </tbody>
-</table>#### 일반 캐시 헤더
+  </thead>
+  <tbody></tbody>
+</table>| Trailer | 인코딩된 \(chunked\) 메시지의 끝 부분에 추가 헤더들의 목록 |
+| :--- | :--- |
+
+
+| Transfer-Encoding | 어떤 인코딩이 적용되었는지 |
+| :--- | :--- |
+
+
+| Upgrade | 클라이언트가 업그레이드하길 원하는 새 버전이나 프로토콜 |
+| :--- | :--- |
+
+
+| Via | 프락시, 게이트웨이 등 메시지가 거쳐온 중개자 |
+| :--- | :--- |
+
 
 매번 서버로부터 객체를 가져오는 대신 사본으로 캐시해주는 헤더
+
+| 헤더 | 설명 |
+| :--- | :--- |
+
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Cache-Control</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Cache-Control</th>
+      <th style="text-align:left">
         <p>&#xCE90;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790; &#xC804;&#xB2EC;</p>
         <p>cf. <a href="https://www.zerocho.com/category/HTTP/post/5b594dd3c06fa2001b89feb9">&#xCFE0;&#xD0A4;/&#xCE90;&#xC2DC; &#xD5E4;</a>
         </p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">Pragma</td>
-      <td style="text-align:left">&#xCE90;&#xC2DC; &#xC9C0;&#xC2DC;&#xC790; &#xC804;&#xB2EC;&#xC744; &#xC704;&#xD55C;
-        &#xB610; &#xB2E4;&#xB978; &#xBC29;&#xBC95;</td>
-    </tr>
-  </tbody>
-</table>### 3.5.2 요청 헤더
+  </thead>
+  <tbody></tbody>
+</table>| Pragma | 캐시 지시자 전달을 위한 또 다른 방법 |
+| :--- | :--- |
+
 
 * 요청 메시지에 사용
 * 클라이언트의 선호나 능력
@@ -615,96 +518,80 @@
 
 #### Accept 관련 헤더
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Accept</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xBBF8;&#xB514;&#xC5B4;
-        &#xC885;&#xB958;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Accept-Charset</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xBB38;&#xC790;
-        &#xC9D1;&#xD569;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Accept-Encoding</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xC778;&#xCF54;&#xB529;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Accept-Language</td>
-      <td style="text-align:left">&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xC5B8;&#xC5B4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">TE</td>
-      <td style="text-align:left">
-        <p>&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xD655;&#xC7A5;
-          &#xC804;&#xC1A1; &#xCF54;&#xB529;</p>
-        <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/TE">TE</a> (en)</p>
-        <p><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Transfer-Encoding">transfer encodings</a>(ko)</p>
-      </td>
-    </tr>
-  </tbody>
-</table>#### 조건부 요청 헤더
+| 헤더 | 설명 |
+| :--- | :--- |
+
+
+| Accept | 서버가 보내도 되는 미디어 종류 |
+| :--- | :--- |
+
+
+| Accept-Charset | 서버가 보내도 되는 문자 집합 |
+| :--- | :--- |
+
+
+| Accept-Encoding | 서버가 보내도 되는 인코딩 |
+| :--- | :--- |
+
+
+| Accept-Language | 서버가 보내도 되는 언어 |
+| :--- | :--- |
+
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
+      <th style="text-align:left">TE</th>
+      <th style="text-align:left">
+        <p>&#xC11C;&#xBC84;&#xAC00; &#xBCF4;&#xB0B4;&#xB3C4; &#xB418;&#xB294; &#xD655;&#xC7A5;
+          &#xC804;&#xC1A1; &#xCF54;&#xB529;</p>
+        <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/TE">TE</a> (en)</p>
+        <p><a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Transfer-Encoding">transfer encodings</a>(ko)</p>
+      </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody></tbody>
+</table>| 헤더 | 설명 |
+| :--- | :--- |
+
+
+| Expect | 요청에 필요한 서버의 행동 |
+| :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left">Expect</td>
-      <td style="text-align:left">&#xC694;&#xCCAD;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xC11C;&#xBC84;&#xC758;
-        &#xD589;&#xB3D9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">If-Match</td>
-      <td style="text-align:left">
+      <th style="text-align:left">If-Match</th>
+      <th style="text-align:left">
         <p>&#xBB38;&#xC11C;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;(ETag)&#xAC00;
           &#xC8FC;&#xC5B4;&#xC9C4; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xC640;
           &#xC77C;&#xCE58;&#xD574;&#xC57C; &#xD568;</p>
         <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/ETag">ETag</a>
         </p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">If-None-Match</td>
-      <td style="text-align:left">&#xBB38;&#xC11C;&#xC758; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xAC00;
-        &#xC8FC;&#xC5B4;&#xC9C4; &#xC5D4;&#xD2F0;&#xD2F0; &#xD0DC;&#xADF8;&#xC640;
-        &#xC77C;&#xCE58;&#xD558;&#xC9C0; &#xC54A;&#xC544;&#xC57C; &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">If-Modified-Since</td>
-      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC; &#xC774;&#xD6C4;&#xC5D0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00;
-        &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC744; &#xB54C;&#xB9CC; &#xC694;&#xCCAD;
-        (&#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBA74; &#xC81C;&#xD55C;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">If-Unmodified-Since</td>
-      <td style="text-align:left">&#xC8FC;&#xC5B4;&#xC9C4; &#xB0A0;&#xC9DC; &#xC774;&#xD6C4;&#xC5D0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00;
-        &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC744; &#xB54C;&#xB9CC;
-        &#xC694;&#xCCAD; (&#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC73C;&#xBA74; &#xC81C;&#xD55C;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">If-Range</td>
-      <td style="text-align:left">&#xBB38;&#xC11C;&#xC758; &#xBC94;&#xC704;&#xC5D0; &#xB300;&#xD55C; &#xC694;&#xCCAD;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Range</td>
-      <td style="text-align:left">&#xB9AC;&#xC18C;&#xC2A4;&#xC5D0; &#xB300;&#xD55C; &#xD2B9;&#xC815; &#xBC94;&#xC704;&#xB97C;
-        &#xC694;&#xCCAD;</td>
-    </tr>
-  </tbody>
-</table>#### 요청 보안 헤더
+  </thead>
+  <tbody></tbody>
+</table>| If-None-Match | 문서의 엔티티 태그가 주어진 엔티티 태그와 일치하지 않아야 함 |
+| :--- | :--- |
+
+
+| If-Modified-Since | 주어진 날짜 이후에 리소스가 변경되었을 때만 요청 \(변경되지 않았으면 제한\) |
+| :--- | :--- |
+
+
+| If-Unmodified-Since | 주어진 날짜 이후에 리소스가 변경되지 않았을 때만 요청 \(변경되었으면 제한\) |
+| :--- | :--- |
+
+
+| If-Range | 문서의 범위에 대한 요청 |
+| :--- | :--- |
+
+
+| Range | 리소스에 대한 특정 범위를 요청 |
+| :--- | :--- |
+
 
 | 헤더 | 설명 |
 | :--- | :--- |
@@ -714,37 +601,32 @@
 
 #### 프락시 요청 헤더
 
+| 헤더 | 설명 |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Max-Forwards</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Max-Forwards</th>
+      <th style="text-align:left">
         <p>&#xC694;&#xCCAD;&#xC774; &#xD504;&#xB77D;&#xC2DC;&#xB098; &#xAC8C;&#xC774;&#xD2B8;&#xC6E8;&#xC774;&#xB85C;
           &#xC804;&#xB2EC;&#xB420; &#xC218; &#xC788;&#xB294; &#xCD5C;&#xB300; &#xD69F;&#xC218;
           <br
           />TRACE &#xBA54;&#xC11C;&#xB4DC;&#xC640; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xB428;</p>
         <p>cf. <a href="http://withbundo.blogspot.com/2017/08/http-15-http-v-max-forwards-proxy.html">Max-Forwards, Proxy-Authorization, Referer, TE</a>
         </p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">Proxy-Authorization</td>
-      <td style="text-align:left">Authorization&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC;&#xC5D0;&#xC11C;
-        &#xC778;&#xC99D;&#xD560; &#xB54C; &#xC4F0;&#xC784;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Proxy-Connection</td>
-      <td style="text-align:left">Connection&#xACFC; &#xAC19;&#xC73C;&#xB098; &#xD504;&#xB77D;&#xC2DC;&#xC5D0;&#xC11C;
-        &#xC5F0;&#xACB0;&#xC744; &#xB9FA;&#xC744; &#xB54C; &#xC4F0;&#xC784;</td>
-    </tr>
-  </tbody>
-</table>### 3.5.3 응답 헤더
+  </thead>
+  <tbody></tbody>
+</table>| Proxy-Authorization | Authorization과 같으나 프락시에서 인증할 때 쓰임 |
+| :--- | :--- |
+
+
+| Proxy-Connection | Connection과 같으나 프락시에서 연결을 맺을 때 쓰임 |
+| :--- | :--- |
+
 
 * 응답 메시지에 사용
 
@@ -762,35 +644,29 @@
 * 서버에 여러 가지 표현이 가능한 문서가 있을 때, 서버와 클라이언트가 그 중 어떤 표현을 택할 것인지 협상 지원
 * ex. 서버에 한국어, 영어로 번역된 HTML 문서가 있을 때
 
+| 헤더 | 설명 |
+| :--- | :--- |
+
+
+| Accept-Ranges | 부분 요청을 할 때 서버가 자원에 대해 받아들일 수 있는 범위 단위의 형태 \(ex. bytes\) |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xD5E4;&#xB354;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Accept-Ranges</td>
-      <td style="text-align:left">&#xBD80;&#xBD84; &#xC694;&#xCCAD;&#xC744; &#xD560; &#xB54C; &#xC11C;&#xBC84;&#xAC00;
-        &#xC790;&#xC6D0;&#xC5D0; &#xB300;&#xD574; &#xBC1B;&#xC544;&#xB4E4;&#xC77C;
-        &#xC218; &#xC788;&#xB294; &#xBC94;&#xC704; &#xB2E8;&#xC704;&#xC758; &#xD615;&#xD0DC;
-        (ex. bytes)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Vary</td>
-      <td style="text-align:left">
+      <th style="text-align:left">Vary</th>
+      <th style="text-align:left">
         <p>&#xC751;&#xB2F5;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC904; &#xC218; &#xC788;&#xC5B4;&#xC11C;
           &#xC11C;&#xBC84;&#xAC00; &#xD655;&#xC778;&#xD574; &#xBCF4;&#xC544;&#xC57C;
           &#xD558;&#xB294; &#xD5E4;&#xB354;&#xB4E4;&#xC758; &#xBAA9;&#xB85D;</p>
         <p>cf. <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Vary">Vary</a>
         </p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>#### 응답 보안 헤더
-
-| 헤더 | 설명 |
+  </thead>
+  <tbody></tbody>
+</table>| 헤더 | 설명 |
 | :--- | :--- |
 | Proxy-Authenticate | 프락시에서 클라이언트로 보낸 인증 요구의 목록 |
 | Set-Cookie | 클라이언트에 토큰을 설정하기 위해 사용 보안 헤더는 아니지만 보안에 영향을 줌 |

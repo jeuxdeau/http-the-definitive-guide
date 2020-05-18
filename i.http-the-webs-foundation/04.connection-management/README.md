@@ -13,7 +13,7 @@
 
 ### 신뢰할 수 있는 데이터 전송 통로인 TCP
 
-* HTTP 프로그래머는 TCP/IP 계층에서 무슨 일이 일어나는지 보이지 않는다 
+* HTTP 프로그래머는 TCP/IP 계층에서 무슨 일이 일어나는지 보이지 않는다
 
   [TCP 소켓 프로그래밍](https://github.com/jeuxdeau/http-the-definitive-guide/blob/master/i.http-the-webs-foundation/04.connection-management/README.md#tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
@@ -133,7 +133,7 @@
   >
   > * HTTP 헤더 필드 이름
   >   * 이 커넥션에만 해당되는 헤더들을 나열 \(hop-by-hop\)
-  >     * 특정 두 서버에만 영향 
+  >     * 특정 두 서버에만 영향
   >
   >       \(Proxy-Authenticate, Proxy-Connection, Trasfer-Encoding, Upgrade 등의 헤더도 동일하게 취급되야 함\)
   >   * 다음 커넥션에 전달 시 삭제해서 전달해야 함
@@ -249,20 +249,15 @@
 
 > 멍청한 프록시가 존재할 때 Connection: Keep-Alive 헤더가 포함된 요청을 날리면? 1. 클라이언트는 Connection : Keep-Alive 헤더를 포함한 요청을 날린다 2. 멍청한 프록시는 Connection 헤더를 단순한 확장 헤더로 인식하여 그대로 다음 서버로 전달한다
 >
-> * Connection 헤더는 hop-by-hop 헤더로 특정 두 서버 사이에서만 동작해야 함
->   1. 서버가 요청을 수락할 경우 프록시와 커넥션을 유지하기를 원하는 것으로 판단하고 Connection : Keep-Alive 규약에 따른 응답을 내려준다
->   2. 멍청한 프록시는 서버의 Connection 헤더를 그대로 클라이언트에 전달하고, 클라이언트는 프록시와 커넥션이 유지되는 것으로 생각하고 Keep-Alive 규약에 맞춰 요청을 보낸다
->   3. 하지만 멍청한 프록시는 Keep-Alive 를 전혀 모르기 떄문에 커넥션 종료를 기다리지만, 서버는 커넥션을 유지하는 것으로 판단하여 끊지 않고 멍청한 프록시는 계속 대기한다
->   4. 한편 클라이언트는 응답 메세지를 받고 다음 요청을 프록시로 보내는데, 프록시는 같은 커넥션으로부터 다른 요청이 오는 경우에 대한 처리는 알지 못하기 때문에 클라이언트의 요청을 무시한다
->   5. 클라이언트나 서버의 커넥션 타임아웃이 발생할 때 까지 idle 커넥션이 유지된다
+> * Connection 헤더는 hop-by-hop 헤더로 특정 두 서버 사이에서만 동작해야 함 1. 서버가 요청을 수락할 경우 프록시와 커넥션을 유지하기를 원하는 것으로 판단하고 Connection : Keep-Alive 규약에 따른 응답을 내려준다 2. 멍청한 프록시는 서버의 Connection 헤더를 그대로 클라이언트에 전달하고, 클라이언트는 프록시와 커넥션이 유지되는 것으로 생각하고 Keep-Alive 규약에 맞춰 요청을 보낸다 3. 하지만 멍청한 프록시는 Keep-Alive 를 전혀 모르기 떄문에 커넥션 종료를 기다리지만, 서버는 커넥션을 유지하는 것으로 판단하여 끊지 않고 멍청한 프록시는 계속 대기한다 4. 한편 클라이언트는 응답 메세지를 받고 다음 요청을 프록시로 보내는데, 프록시는 같은 커넥션으로부터 다른 요청이 오는 경우에 대한 처리는 알지 못하기 때문에 클라이언트의 요청을 무시한다 5. 클라이언트나 서버의 커넥션 타임아웃이 발생할 때 까지 idle 커넥션이 유지된다
 >
->      프록시와 홉별 헤더
+>   프록시와 홉별 헤더
 >
->      위와 같은 문제를 피하기 위해 중개 서버는 Connetion 헤더와 관련된 모든 필드를 제거한 채 다음 서버로 전달해야 한다 \(Proxy-Authenticate, Proxy-Connection, Transfer-Encoding, Upgrade 와 같은 헤더들도 홉별 헤더에 포함된다\)
+>   위와 같은 문제를 피하기 위해 중개 서버는 Connetion 헤더와 관련된 모든 필드를 제거한 채 다음 서버로 전달해야 한다 \(Proxy-Authenticate, Proxy-Connection, Transfer-Encoding, Upgrade 와 같은 헤더들도 홉별 헤더에 포함된다\)
 >
->      **Proxy-Connection 살펴보기**
+>   **Proxy-Connection 살펴보기**
 >
->   6. 모든 헤더를 무조건 전달하는 문제를 해결하기 위한 방안 중 하나로써 제시되었다
+>   1. 모든 헤더를 무조건 전달하는 문제를 해결하기 위한 방안 중 하나로써 제시되었다
 
 ![http-connection\_6.png](../../.gitbook/assets/http-connection_6.png)
 

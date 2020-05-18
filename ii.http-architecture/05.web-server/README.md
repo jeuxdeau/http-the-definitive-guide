@@ -1,7 +1,5 @@
 # 05. 웹 서버
 
-
-
 ## 05. 웹 서버
 
 ### 5.1 다채로운 웹 서버
@@ -160,7 +158,7 @@ HostnameLookups off
   * 클라이언트는 HTTP 커넥션을 연다.
   * 서버는 자신의 커넥션을 클라이언트의 ident서버 포트를 향해 열고, 새 커넥션에 대응하는 사용자 이름을 묻는 요청을 보낸다.
 
-    ![](../../.gitbook/assets/Screen_Shot_2019-11-03_at_3-cfde02ed-83a1-4920-9cf9-df46e836c71f.36.00_PM.png)
+    ![](https://github.com/jeuxdeau/http-the-definitive-guide/tree/3566ef15a6a48892212ef3ad54b190af67554846/.gitbook/assets/Screen_Shot_2019-11-03_at_3-cfde02ed-83a1-4920-9cf9-df46e836c71f.36.00_PM.png)
 * 공공 인터넷에서는 잘 동작하지 않는다.
   * 많은 클라이언트가 ident 프로토콜 데몬 소프트웨어를 실행하지 않는다.
   * HTTP 트랜잭션을 지연시킨다.

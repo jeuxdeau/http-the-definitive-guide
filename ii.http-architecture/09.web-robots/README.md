@@ -387,11 +387,11 @@ Created: Dec 17, 2019 8:19 AM
 
 ![ch9\_7.png](../../.gitbook/assets/ch9_7.png)
 
-![ch9\_8.png](../../.gitbook/assets/ch9_7%20%283%29.png)
+![ch9\_8.png](../../.gitbook/assets/ch9_7-3.png)
 
-![ch9\_9.png](../../.gitbook/assets/ch9_7%20%282%29.png)
+![ch9\_9.png](../../.gitbook/assets/ch9_7-2.png)
 
-![ch9\_10.png](../../.gitbook/assets/ch9_7%20%281%29.png)
+![ch9\_10.png](../../.gitbook/assets/ch9_7-1.png)
 
 ### 9.6 검색엔진
 
